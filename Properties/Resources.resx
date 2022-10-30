@@ -118,46 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="starshipRegButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\starshipRegButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lcarsMainRedesign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lcarsMainRedesign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cultureButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cultureButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="accessButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\accessButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="scienceButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\scienceButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clearButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clearButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="techButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\techButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="starfleetLogoGold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\starfleetLogoGold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="newRegButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starshipRegButton-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exitButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\starshipRegButton-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="statRegButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starshipRegButton-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="starRegButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starshipRegButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="splashRedesign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splash (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="galacticMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\galacticMap.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="statRegOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starshipRegButton-11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="updatedLcars1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\updatedLcars1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="newRegOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starshipRegButton-21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UFP2390s" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UFP2390s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exitOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starshipRegButton-31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="registerButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\registerButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="personnelButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\personnelButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="starRegOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starshipRegButton3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

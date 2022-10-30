@@ -1,0 +1,11 @@
+United Earth,United Earth Space Probe / Starfleet,NX Class,Enterprise
+United Federation of Planets,Starfleet,Constitution Class,Enterprise
+United Federation of Planets,Starfleet,Constitution Class,Enterprise
+United Federation of Planets,Starfleet,Galaxy Class,USS Enterprise
+United Federation of Planets,Starfleet,Intrepid Class,USS Voyager
+United Federation of Planets,Starfleet,Defiant Class,USS Defiant
+United Federation of Planets,Starfleet,Defiant Class,USS Valiant
+United States Air Force, Stargate Command, X-303 Class, Prometheus
+United States Air Force,Stargate Command,X-304,Daedalus
+United States Air Force,Stargate Command,X-304,Daedalus
+United States Air Force,Stargate Command,X-304,Daedalus

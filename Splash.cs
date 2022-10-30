@@ -46,7 +46,7 @@ namespace StarshipRegistryGUI
 
             if (userName != String.Empty)
                 {
-                accessStatus.ForeColor = Color.Green;
+                accessStatus.ForeColor = Color.FromArgb(153, 170, 102);
                 accessStatus.Text = "ACCESS GRANTED.";
 
                 SoundPlayer sPlayer = new SoundPlayer(@"c:\Users\Chris\Downloads\input_ok_3_clean.wav");
@@ -59,7 +59,7 @@ namespace StarshipRegistryGUI
                 mainForm newForm = new mainForm();
                 newForm.Show();
 
-                this.Close();
+                this.Hide();
                 }
             else
                 {
@@ -68,8 +68,8 @@ namespace StarshipRegistryGUI
                 sPlayer.Play();
 
                 // failed input text
-                accessStatus.ForeColor = Color.FromArgb(221, 68, 68);
-                accessStatus.Text = "ACCESS DENIED. PLEASE ENTER VALID IDENTIFICATION.";
+                accessStatus.ForeColor = Color.FromArgb(204, 75, 75);
+                accessStatus.Text = "ACCESS DENIED. TRY AGAIN.";
                 splNameInput.Focus();
 
                 #endregion
