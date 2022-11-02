@@ -5,8 +5,6 @@ namespace StarshipRegistryGUI;
 
 public partial class mainForm : Form
     {
-
-
     #region Form Specific Methods
     // corner rounding
     [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -14,6 +12,7 @@ public partial class mainForm : Form
         (int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
 
     readonly Splash Spl;
+
 
     public mainForm(Splash spl)
         {
@@ -40,10 +39,7 @@ public partial class mainForm : Form
         // field visibility at start
         inputText.Visible = false;
         selectionLabel.Visible = false;
-        outputTextBox.Visible = false;
-
-
-
+        outputLabel.Visible = false;
         }
 
 
@@ -69,10 +65,14 @@ public partial class mainForm : Form
         this.appTitleLabel.Text = "LCARS • DATABASE CONNECTED";
 
         infoTextBox.Visible = true;
-        outputTextBox.Visible = true;
-        infoTextBox.Text = "UNITED FEDERATION OF PLANETS • UTOPIA PLANITIA SHIPYARDS • MARS • SOL SYSTEM • STARDATE: " + calculateStardate();
-        outputTextBox.Text = "THIS IS THE STARFLEET DATABASE OF KNOWN STARSHIPS AND SPACE STATIONS.\r\n\r\nNAVIGATE THIS SYSTEM USING THE BUTTONS TO THE RIGHT.\r\n\r\nTHIS SYSTEM WILL ALLOW YOU TO VIEW THE STARSHIPS AND SPACE STATIONS THAT ARE CURRENTLY ENTERED INTO THE DATABASE.\r\n\r\nBE ADVISED, THAT THIS DATABASE IS STILL UNDER CONSTRUCTION, SO NOT EVERY VESSEL OR STATION IS AVAILABLE IN THIS REGISTRY.\r\n\r\nYOU CAN ADD TO THIS REGISTRY MANUALLY BY USING THE 'NEW REGISTRATION' BUTTON TO THE RIGHT.\r\n\r\n";
-        stardateLabel.Text = "" + calculateStardate();
+        outputLabel.Visible = true;
+        infoTextBox.Text = "UNITED FEDERATION OF PLANETS • UTOPIA PLANITIA SHIPYARDS • MARS • SOL SYSTEM • STARDATE: " + CalcStardate();
+        outputLabel.Text = "THIS IS THE STARFLEET DATABASE OF KNOWN STARSHIPS AND SPACE STATIONS.\r\n\r\n" +
+            "NAVIGATE THIS SYSTEM USING THE BUTTONS TO THE RIGHT.\r\n\r\n" +
+            "THIS SYSTEM WILL ALLOW YOU TO VIEW THE STARSHIPS AND SPACE STATIONS THAT ARE CURRENTLY ENTERED INTO THE DATABASE.\r\n\r\n" +
+            "BE ADVISED, THAT THIS DATABASE IS STILL UNDER CONSTRUCTION, SO NOT EVERY VESSEL OR STATION IS AVAILABLE IN THIS REGISTRY.\r\n\r\n" +
+            "YOU CAN ADD TO THIS REGISTRY MANUALLY BY USING THE 'NEW REGISTRATION' BUTTON TO THE RIGHT.\r\n\r\n";
+        stardateLabel.Text = "" + CalcStardate();
         }
 
     #endregion
@@ -81,29 +81,22 @@ public partial class mainForm : Form
 
 
 
-    #region Main Navigation
-    private bool regBtnClicked = false;
+    #region Primary Navigation
+    // STARSHIP REGISTRY BUTTON
+    public bool regBtnClicked = false;
     public void accessBtn_Click(object sender, EventArgs e)
         {
         regBtnClicked = true;
+        statRegClicked = false;
 
+        randomKeySound();
 
-        // helper methods
-        primeElementVisibility();
-        homeScreenElementVisibility();
-        clearAllTextFields();
-        focusOnInput();
+        accessButton();
 
-        randomKeySound(); // plays a random sound when buttons are pressed
-
-        this.appTitleLabel.Text = "LCARS • DATABASE OF IDENTIFIED STARSHIPS";
-
-        headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
-        headingLabel.Text = "// STARSHIP REGISTRY";
-        selectionLabel.Text = "SEARCH PARAMETERS:";
         }
 
-    private bool statRegClicked = false;
+    // STATION REGISTRY BUTTON
+    public bool statRegClicked = false;
     private void stationRegButton_Click(object sender, EventArgs e)
         {
         regBtnClicked = false;
@@ -112,35 +105,35 @@ public partial class mainForm : Form
         // helper methods
         primeElementVisibility();
         homeScreenElementVisibility();
-        clearAllTextFields();
-        focusOnInput();
+        ClearTextFields();
+        FocusInput();
 
         randomKeySound(); // plays a random sound when buttons are pressed
-        appTitleLabel.Text = "LCARS • SPACE STATION REGISTRY";
+        appTitleLabel.Text = "LCARS • DATABASE OF PORTS AND SPACE STATIONS";
 
         headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
         headingLabel.Text = "// SPACE STATION DATABASE";
         selectionLabel.Text = "SEARCH PARAMETERS:";
         }
 
-
+    // NEW REGISTRY BUTTON
     private void newRegButton_Click(object sender, EventArgs e)
         {
         // helper methods
         primeElementVisibility();
         homeScreenElementVisibility();
-        clearAllTextFields();
-        focusOnInput();
+        ClearTextFields();
+        FocusInput();
 
         randomKeySound(); // plays a random sound when buttons are pressed
-        appTitleLabel.Text = "LCARS • SPACE STATION REGISTRY";
+        appTitleLabel.Text = "LCARS • REGISTER A NEW SPACECRAFT";
 
         headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
         headingLabel.Text = "// REGISTER NEW STARSHIP OR SPACE STATION";
         selectionLabel.Text = "STARSHIP NAME:";
         }
 
-
+    // EXIT BUTTON
     private void exitBtn_Click(object sender, EventArgs e)
         {
 
@@ -160,14 +153,14 @@ public partial class mainForm : Form
 
 
     #region Secondary Navigation
-
+    // CONFIRM/ENTER BUTTON
     public void confirmButton_Click(object sender, EventArgs e)
         {
         Focus();
 
         if (regBtnClicked == true)
             {
-            //StarshipSearch();
+            StarshipSearch();
 
             }
         else if (statRegClicked == true)
@@ -176,14 +169,18 @@ public partial class mainForm : Form
             }
         }
 
-
+    // CLEAR FIELDS BUTTON
     private void clearButton_Click(object sender, EventArgs e)
         {
-        randomKeySound(); // plays a random sound when buttons are pressed
 
-        inputText.Clear();
-        outputTextBox.Clear();
-        focusOnInput();
+        /*        inputText.Clear();
+                outputLabel.Text = String.Empty;
+                Focus();*/
+        if (regBtnClicked == true)
+            {
+            randomKeySound();
+            accessButton();
+            }
         }
     #endregion
 
@@ -195,12 +192,27 @@ public partial class mainForm : Form
     // STARSHIP SEARCH METHOD
     public void StarshipSearch()
         {
+        /*string tstText = inputText.Text.ToUpper();
+
+        if (tstText == "ENT")
+            {
+            string filePath = @"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\starships.csv";
+
+            List<string> lines = File.ReadAllLines(filePath).ToList();
+
+            foreach (string line in lines)
+                {
+                outputLabel.Text = line.ToUpper();
+                }
+
+            }*/
         Starships enterprise = new Starships("United Federation of Planets", "Galaxy Class", "NCC-1701-D", "USS Enterprise", "Jean-Luc Picard", "Warp 7", "Warp 9.8", "1000-6000 Crew Members", false);
         Starships defiant = new Starships("United Federation of Planets", "Defiant Class", "NX-72405", "USS Defiant", "Benjamin Lafayette Sisko", "Warp 6", "Warp 9.5", "50 Crew Members", true);
         Starships voyager = new Starships("United Federation of Planets", "Intrepid Class", "NCC-74656", "USS Voyager", "Kathryn Janeway", "Warp 6", "Warp[ 9.975", "200 Crew Members", false);
 
         // Klingon
         Starships rotarran = new Starships("Klingon Empire", "Bird of Prey", "IKC-92127", "IKS Rotarran", "General Martok", "Warp 6.5", "Warp 8", "12 Warriors", false);
+
 
         String shipEntry = inputText.Text.ToUpper();
 
@@ -210,10 +222,8 @@ public partial class mainForm : Form
             case "ENT":
             case "ENTERPRISE D":
             case "NCC 1701-D":
-                acceptedInput();
-
-
-                outputTextBox.Text = "SHIP DESIGNATION:   " + enterprise.shipName.ToUpper() + "\r\n" +
+                AcceptedInput();
+                outputLabel.Text = "SHIP DESIGNATION:   " + enterprise.shipName.ToUpper() + "\r\n" +
                                                    "AFFILIATION:   " + enterprise.affiliation.ToUpper() + "\r\n" +
                                                    "CLASS:   " + enterprise.shipClass.ToUpper() + "\r\n" +
                                                    "REGISTRY NUMBER:   " + enterprise.regNum.ToUpper() + "\r\n" +
@@ -226,8 +236,8 @@ public partial class mainForm : Form
 
             case "DEFIANT":
             case "DEF":
-                acceptedInput();
-                outputTextBox.Text = "SHIP DESIGNATION:   " + defiant.shipName.ToUpper() + "\r\n" +
+                AcceptedInput();
+                outputLabel.Text = "SHIP DESIGNATION:   " + defiant.shipName.ToUpper() + "\r\n" +
                                                    "AFFILIATION:   " + defiant.affiliation.ToUpper() + "\r\n" +
                                                    "CLASS:   " + defiant.shipClass.ToUpper() + "\r\n" +
                                                    "REGISTRY NUMBER:   " + defiant.regNum.ToUpper() + "\r\n" +
@@ -240,8 +250,8 @@ public partial class mainForm : Form
 
             case "VOYAGER":
             case "VOY":
-                acceptedInput();
-                outputTextBox.Text = "SHIP DESIGNATION:   " + voyager.shipName.ToUpper() + "\r\n" +
+                AcceptedInput();
+                outputLabel.Text = "SHIP DESIGNATION:   " + voyager.shipName.ToUpper() + "\r\n" +
                                                    "AFFILIATION:   " + voyager.affiliation.ToUpper() + "\r\n" +
                                                    "CLASS:   " + voyager.shipClass.ToUpper() + "\r\n" +
                                                    "REGISTRY NUMBER:   " + voyager.regNum.ToUpper() + "\r\n" +
@@ -254,8 +264,8 @@ public partial class mainForm : Form
 
             case "ROTARRAN":
             case "ROT":
-                acceptedInput();
-                outputTextBox.Text = "SHIP DESIGNATION:   " + rotarran.shipName.ToUpper() + "\r\n" +
+                AcceptedInput();
+                outputLabel.Text = "SHIP DESIGNATION:   " + rotarran.shipName.ToUpper() + "\r\n" +
                                                    "AFFILIATION:   " + rotarran.affiliation.ToUpper() + "\r\n" +
                                                    "CLASS:   " + rotarran.shipClass.ToUpper() + "\r\n" +
                                                    "REGISTRY NUMBER:   " + rotarran.regNum.ToUpper() + "\r\n" +
@@ -265,7 +275,16 @@ public partial class mainForm : Form
                                                    "CREW COMPLIMENT:   " + rotarran.crewComp.ToUpper() + "\r\n" +
                                                    "EXPERIMENTAL VESSEL:   " + rotarran.isExperimental;
                 break;
+
+            default:
+
+                appTitleLabel.Text = "LCARS • INVALID INPUT";
+                outputLabel.Text = $"THE VESSEL '{shipEntry.ToUpper()}' WAS NOT FOUND. PLEASE VERIFY SEARCH PARAMETERS  AND TRY AGAIN.";
+
+
+                break;
             }
+
         }
 
 
@@ -273,16 +292,18 @@ public partial class mainForm : Form
         {
         string tstText = inputText.Text.ToUpper();
 
-        if (tstText == "WORKING?")
+        if (tstText == "DEEP SPACE 9")
             {
-            string filePath = @"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\text.txt";
+            AcceptedInput();
+            string filePath = @"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\starships.csv";
 
             List<string> lines = File.ReadAllLines(filePath).ToList();
 
             foreach (string line in lines)
                 {
-                outputTextBox.Text = line;
+                outputLabel.Text = line.ToUpper();
                 }
+
             }
         }
 
@@ -291,13 +312,13 @@ public partial class mainForm : Form
 
         }
 
-
-
     #endregion
 
 
 
-    #region MOUSE OVER METHODS
+
+
+    #region Mouse Over Methods
     // CHANGES THE BUTTON IMAGE ON MOUSE OVER
     void starshipRegButton_MouseEnter(object sender, EventArgs e)   // STARSHIP REGISTRY BUTTON
         {
@@ -347,17 +368,17 @@ public partial class mainForm : Form
     #region Support Methods
 
     // CLEARS ALL TEXT FIELDS
-    private void clearAllTextFields()
+    private void ClearTextFields()
         {
         headingLabel.Text = String.Empty;
         inputText.Text = String.Empty;
         selectionLabel.Text = String.Empty;
-        outputTextBox.Text = String.Empty;
+        outputLabel.Text = String.Empty;
         }
 
 
     // FOCUSES CURSOR ON MAIN TEXT INPUT
-    private void focusOnInput()
+    private void FocusInput()
         {
         this.inputText.Focus();
         }
@@ -369,7 +390,7 @@ public partial class mainForm : Form
         inputText.Visible = true;
         //headingLabel.Visible = true;
         selectionLabel.Visible = true;
-        outputTextBox.Visible = true;
+        outputLabel.Visible = true;
         }
 
     private void homeScreenElementVisibility()
@@ -381,7 +402,7 @@ public partial class mainForm : Form
 
 
     // CONVERTS DATE INTO STARDATE
-    public double calculateStardate()
+    public double CalcStardate()
         {
         DateTime calenderStarTrek = new DateTime(2323, 1, 1, 0, 0, 0);
         DateTime presentLocalDate = DateTime.Now;
@@ -396,12 +417,20 @@ public partial class mainForm : Form
         }
 
 
-    // PLAYS SOUND FOR ACCEPTED INPUT
-    public void acceptedInput()
+
+    // PLAYS SOUND FOR ACCEPTED OR DENIED INPUTS
+    public void AcceptedInput()
         {
-        SoundPlayer enterPress = new SoundPlayer(@"c:\users\Chris\Downloads\input_ok_2_clean.wav");
+        SoundPlayer enterPress = new SoundPlayer(@"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\input_ok_2_clean.wav");
         enterPress.Play();
         }
+
+    public void DeniedInput()
+        {
+        SoundPlayer enterPress = new SoundPlayer(@"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\input_failed_clean.wav");
+        enterPress.Play();
+        }
+
 
 
     // PLAYS A RANDOM SOUND WHEN BUTTONS ARE PRESSED
@@ -419,6 +448,25 @@ public partial class mainForm : Form
 
         SoundPlayer ranKeySound = new SoundPlayer(randomSound);
         ranKeySound.PlaySync();
+        }
+
+
+    public void accessButton()
+        {
+        // helper methods
+        primeElementVisibility();
+        homeScreenElementVisibility();
+        ClearTextFields();
+        FocusInput();
+
+        appTitleLabel.Text = "LCARS • DATABASE OF IDENTIFIED STARSHIPS";
+
+        headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
+        headingLabel.Text = "// STARSHIP REGISTRY";
+        selectionLabel.Text = "SEARCH PARAMETERS:";
+
+        outputLabel.Text = "SEARCH INSTRUCTIONS: \n" +
+            "ENTER THE NAME OF THE VESSEL YOU WISH TO QUERY [EX. 'ENTERPRISE'] THEN PRESS ENTER OR CLICK 'CONFIRM'.";
         }
 
     #endregion

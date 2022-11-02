@@ -61,6 +61,15 @@ namespace StarshipRegistryGUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream communications_end_transmission {
+            get {
+                return ResourceManager.GetStream("communications_end_transmission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap exitButton {
@@ -81,21 +90,92 @@ namespace StarshipRegistryGUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap galacticMap {
+        internal static System.IO.UnmanagedMemoryStream input_failed_clean {
             get {
-                object obj = ResourceManager.GetObject("galacticMap", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("input_failed_clean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream input_ok_2_clean {
+            get {
+                return ResourceManager.GetStream("input_ok_2_clean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream input_ok_3_clean {
+            get {
+                return ResourceManager.GetStream("input_ok_3_clean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream keyok1 {
+            get {
+                return ResourceManager.GetStream("keyok1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream keyok2 {
+            get {
+                return ResourceManager.GetStream("keyok2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream keyok3 {
+            get {
+                return ResourceManager.GetStream("keyok3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream keyok4 {
+            get {
+                return ResourceManager.GetStream("keyok4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream keyok5 {
+            get {
+                return ResourceManager.GetStream("keyok5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream keyok6 {
+            get {
+                return ResourceManager.GetStream("keyok6", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lcarsMainRedesign {
+        internal static System.Drawing.Bitmap lcarsRedesign {
             get {
-                object obj = ResourceManager.GetObject("lcarsMainRedesign", resourceCulture);
+                object obj = ResourceManager.GetObject("lcarsRedesign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -117,6 +197,15 @@ namespace StarshipRegistryGUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("newRegOver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream scrshow {
+            get {
+                return ResourceManager.GetStream("scrshow", resourceCulture);
             }
         }
         
@@ -167,6 +256,24 @@ namespace StarshipRegistryGUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("statRegOver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream tng_commandcenter {
+            get {
+                return ResourceManager.GetStream("tng_commandcenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream unabletocomply {
+            get {
+                return ResourceManager.GetStream("unabletocomply", resourceCulture);
             }
         }
     }
