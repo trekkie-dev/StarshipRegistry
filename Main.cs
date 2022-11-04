@@ -1,6 +1,7 @@
 using System.Media;
 using System.Runtime.InteropServices;
 
+
 namespace StarshipRegistryGUI;
 
 public partial class mainForm : Form
@@ -40,6 +41,7 @@ public partial class mainForm : Form
         inputText.Visible = false;
         selectionLabel.Visible = false;
         outputLabel.Visible = false;
+
         }
 
 
@@ -90,7 +92,6 @@ public partial class mainForm : Form
         statRegClicked = false;
 
         randomKeySound();
-
         accessButton();
 
         }
@@ -145,14 +146,6 @@ public partial class mainForm : Form
         }
 
 
-
-    #endregion
-
-
-
-
-
-    #region Secondary Navigation
     // CONFIRM/ENTER BUTTON
     public void confirmButton_Click(object sender, EventArgs e)
         {
@@ -160,7 +153,7 @@ public partial class mainForm : Form
 
         if (regBtnClicked == true)
             {
-            StarshipSearch();
+            //StarshipSearch();
 
             }
         else if (statRegClicked == true)
@@ -168,6 +161,7 @@ public partial class mainForm : Form
             StationSearch();
             }
         }
+
 
     // CLEAR FIELDS BUTTON
     private void clearButton_Click(object sender, EventArgs e)
@@ -190,101 +184,22 @@ public partial class mainForm : Form
 
     #region Features Methods
     // STARSHIP SEARCH METHOD
-    public void StarshipSearch()
+    public void StarshipSearch(string[] args)
         {
-        /*string tstText = inputText.Text.ToUpper();
+        string[] starshipLines = System.IO.File.ReadAllLines(@"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\starships.csv");
 
-        if (tstText == "ENT")
+        var starship = new List<Starship>();
+
+        for (int i = 0; i < starshipLines.Length; i++)
             {
-            string filePath = @"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\starships.csv";
-
-            List<string> lines = File.ReadAllLines(filePath).ToList();
-
-            foreach (string line in lines)
-                {
-                outputLabel.Text = line.ToUpper();
-                }
-
-            }*/
-        Starships enterprise = new Starships("United Federation of Planets", "Galaxy Class", "NCC-1701-D", "USS Enterprise", "Jean-Luc Picard", "Warp 7", "Warp 9.8", "1000-6000 Crew Members", false);
-        Starships defiant = new Starships("United Federation of Planets", "Defiant Class", "NX-72405", "USS Defiant", "Benjamin Lafayette Sisko", "Warp 6", "Warp 9.5", "50 Crew Members", true);
-        Starships voyager = new Starships("United Federation of Planets", "Intrepid Class", "NCC-74656", "USS Voyager", "Kathryn Janeway", "Warp 6", "Warp[ 9.975", "200 Crew Members", false);
-
-        // Klingon
-        Starships rotarran = new Starships("Klingon Empire", "Bird of Prey", "IKC-92127", "IKS Rotarran", "General Martok", "Warp 6.5", "Warp 8", "12 Warriors", false);
-
-
-        String shipEntry = inputText.Text.ToUpper();
-
-        switch (shipEntry)
-            {
-            case "ENTERPRISE":
-            case "ENT":
-            case "ENTERPRISE D":
-            case "NCC 1701-D":
-                AcceptedInput();
-                outputLabel.Text = "SHIP DESIGNATION:   " + enterprise.shipName.ToUpper() + "\r\n" +
-                                                   "AFFILIATION:   " + enterprise.affiliation.ToUpper() + "\r\n" +
-                                                   "CLASS:   " + enterprise.shipClass.ToUpper() + "\r\n" +
-                                                   "REGISTRY NUMBER:   " + enterprise.regNum.ToUpper() + "\r\n" +
-                                                   "MOST RECENT CAPTAIN:   " + enterprise.currentCaptain.ToUpper() + "\r\n" +
-                                                   "CRUISING SPEED:   " + enterprise.cruiseSpeed.ToUpper() + "\r\n" +
-                                                   "TOP SPEED:   " + enterprise.topSpeed.ToUpper() + "\r\n" +
-                                                   "CREW COMPLIMENT:   " + enterprise.crewComp.ToUpper() + "\r\n" +
-                                                   "EXPERIMENTAL VESSEL:   " + enterprise.isExperimental;
-                break;
-
-            case "DEFIANT":
-            case "DEF":
-                AcceptedInput();
-                outputLabel.Text = "SHIP DESIGNATION:   " + defiant.shipName.ToUpper() + "\r\n" +
-                                                   "AFFILIATION:   " + defiant.affiliation.ToUpper() + "\r\n" +
-                                                   "CLASS:   " + defiant.shipClass.ToUpper() + "\r\n" +
-                                                   "REGISTRY NUMBER:   " + defiant.regNum.ToUpper() + "\r\n" +
-                                                   "MOST RECENT CAPTAIN:   " + defiant.currentCaptain.ToUpper() + "\r\n" +
-                                                   "CRUISING SPEED:   " + defiant.cruiseSpeed.ToUpper() + "\r\n" +
-                                                   "TOP SPEED:   " + defiant.topSpeed.ToUpper() + "\r\n" +
-                                                   "CREW COMPLIMENT:   " + defiant.crewComp.ToUpper() + "\r\n" +
-                                                   "EXPERIMENTAL VESSEL:   " + defiant.isExperimental;
-                break;
-
-            case "VOYAGER":
-            case "VOY":
-                AcceptedInput();
-                outputLabel.Text = "SHIP DESIGNATION:   " + voyager.shipName.ToUpper() + "\r\n" +
-                                                   "AFFILIATION:   " + voyager.affiliation.ToUpper() + "\r\n" +
-                                                   "CLASS:   " + voyager.shipClass.ToUpper() + "\r\n" +
-                                                   "REGISTRY NUMBER:   " + voyager.regNum.ToUpper() + "\r\n" +
-                                                   "MOST RECENT CAPTAIN:   " + voyager.currentCaptain.ToUpper() + "\r\n" +
-                                                   "CRUISING SPEED:   " + voyager.cruiseSpeed.ToUpper() + "\r\n" +
-                                                   "TOP SPEED:   " + voyager.topSpeed.ToUpper() + "\r\n" +
-                                                   "CREW COMPLIMENT:   " + voyager.crewComp.ToUpper() + "\r\n" +
-                                                   "EXPERIMENTAL VESSEL:   " + voyager.isExperimental;
-                break;
-
-            case "ROTARRAN":
-            case "ROT":
-                AcceptedInput();
-                outputLabel.Text = "SHIP DESIGNATION:   " + rotarran.shipName.ToUpper() + "\r\n" +
-                                                   "AFFILIATION:   " + rotarran.affiliation.ToUpper() + "\r\n" +
-                                                   "CLASS:   " + rotarran.shipClass.ToUpper() + "\r\n" +
-                                                   "REGISTRY NUMBER:   " + rotarran.regNum.ToUpper() + "\r\n" +
-                                                   "MOST RECENT CAPTAIN:   " + rotarran.currentCaptain.ToUpper() + "\r\n" +
-                                                   "CRUISING SPEED:   " + rotarran.cruiseSpeed.ToUpper() + "\r\n" +
-                                                   "TOP SPEED:   " + rotarran.topSpeed.ToUpper() + "\r\n" +
-                                                   "CREW COMPLIMENT:   " + rotarran.crewComp.ToUpper() + "\r\n" +
-                                                   "EXPERIMENTAL VESSEL:   " + rotarran.isExperimental;
-                break;
-
-            default:
-
-                appTitleLabel.Text = "LCARS • INVALID INPUT";
-                outputLabel.Text = $"THE VESSEL '{shipEntry.ToUpper()}' WAS NOT FOUND. PLEASE VERIFY SEARCH PARAMETERS  AND TRY AGAIN.";
-
-
-                break;
+            Starship stsp = new Starship(starshipLines[i]);
+            starship.Add(stsp);
             }
 
+        for (int i = 0; i < starship.Count; i++)
+            {
+            outputLabel.Text = starshipLines[i];
+            }
         }
 
 
@@ -422,7 +337,7 @@ public partial class mainForm : Form
     public void AcceptedInput()
         {
         SoundPlayer enterPress = new SoundPlayer(@"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\input_ok_2_clean.wav");
-        enterPress.Play();
+        enterPress.PlaySync();
         }
 
     public void DeniedInput()
