@@ -153,7 +153,7 @@ public partial class mainForm : Form
 
         if (regBtnClicked == true)
             {
-            //StarshipSearch();
+            StarshipSearch();
 
             }
         else if (statRegClicked == true)
@@ -184,21 +184,138 @@ public partial class mainForm : Form
 
     #region Features Methods
     // STARSHIP SEARCH METHOD
-    public void StarshipSearch(string[] args)
+    public void StarshipSearch()
         {
-        string[] starshipLines = System.IO.File.ReadAllLines(@"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\starships.csv");
+        Starships enterprise = new Starships("United Federation of Planets", "Starfleet", "Galaxy Class", "USS Enterprise", "NCC 1701-D", "12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines", "Deflector Shields", "Jean - Luc Picard", "William T Riker", "Warp 7", "Warp 9.8", 42, "1000 – 6000 Crew Members", "Not Prototype", "Destroyed 2371");
 
-        var starship = new List<Starship>();
+        Starships defiant = new Starships("United Federation of Planets", "Starfleet", "Defiant Class", "USS Defiant", "NX-724506", "4 phaser cannons, 3 Phaser emitters, 4 forward and 2 aft photon/quantum torpedo launchers", "Deflector Shields / Ablative Armor", "Benjamin Lafayette Sisko", "Worf / Kira Nerys (Bajoran Militia", "Warp 6", "Warp 9.5", 5, "50 Crew Members", "Prototype Vessel", "In Service");
 
-        for (int i = 0; i < starshipLines.Length; i++)
+        Starships valiant = new Starships("United Federation of Planets", "Starfleet", "Defiant Class", "USS Valiant", "NX-724210", "4 phaser cannons, 3 Phaser emitters, 4 forward and 2 aft photon/quantum torpedo launchers", "Deflector Shields / Ablative Armor", "Tim Watters (acting)", "Karen Farris (acting)", "Warp 6", "Warp 9.5", 5, "50 Crew Members", "Not Prototype", "Destroyed 2374");
+
+        Starships voyager = new Starships("United Federation of Planets", "Starfleet", "Galaxy Class", "USS Enterprise", "NCC 1701 -D", "12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines", "Deflector Shields", "Jean - Luc Picard", "William T Riker", "Warp 7", "Warp 9.8", 42, "1000 – 6000 Crew Members", "Not Prototype", "Destroyed 2371");
+
+        Starships rotarran = new Starships("United Federation of Planets", "Starfleet", "Galaxy Class", "USS Enterprise", "NCC 1701 -D", "12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines", "Deflector Shields", "Jean - Luc Picard", "William T Riker", "Warp 7", "Warp 9.8", 42, "1000 – 6000 Crew Members", "Not Prototype", "Destroyed 2371");
+
+
+        String shipEntry = inputText.Text.ToUpper();
+
+        if (shipEntry != String.Empty)
             {
-            Starship stsp = new Starship(starshipLines[i]);
-            starship.Add(stsp);
-            }
+            switch (shipEntry)
+                {
+                case "ENTERPRISE":
+                case "ENT":
+                case "ENTERPRISE D":
+                case "NCC 1701-D":
+                    AcceptedInput();
+                    inputText.Clear();
+                    outputLabel.Text = "SHIP DESIGNATION:   " + enterprise.shipName.ToUpper() + "\r\n" +
+                                                       "CLASS:   " + enterprise.shipClass.ToUpper() + "\r\n" +
+                                                       "REGISTRY NUMBER:   " + enterprise.registryNum.ToUpper() + "\r\n" +
+                                                       "GOVERNMENT AFFILIATION:   " + enterprise.affiliation.ToUpper() + "\r\n" +
+                                                       "VESSEL OPERATOR:   " + enterprise.shipOperator.ToUpper() + "\r\n" +
+                                                       "MOST RECENT CAPTAIN:   " + enterprise.mostRecentCaptain.ToUpper() + "\r\n" +
+                                                       "FIRST OFFICER:   " + enterprise.firstOfficer.ToUpper() + "\r\n" +
+                                                       "WEAPONRY:   " + enterprise.primaryWeapons.ToUpper() + "\r\n" +
+                                                       "DEFENSE CAPABILITIES:   " + enterprise.defenses.ToUpper() + "\r\n" +
+                                                       "CRUISING SPEED:   " + enterprise.cruisingSpeed.ToUpper() + "\r\n" +
+                                                       "TOP SPEED:   " + enterprise.topSpeed.ToUpper() + "\r\n" +
+                                                       "DECKS:   " + enterprise.numberOfDecks + " DECKS" + "\r\n" +
+                                                       "CREW COMPLIMENT:   " + enterprise.crewCompliment.ToUpper() + "\r\n" +
+                                                       "PROTOTYPE VESSEL:   " + enterprise.isPrototype.ToUpper() + "\r\n" +
+                                                       "SERVICE STATUS:   " + enterprise.serviceStatus.ToUpper();
+                    break;
 
-        for (int i = 0; i < starship.Count; i++)
-            {
-            outputLabel.Text = starshipLines[i];
+                case "DEFIANT":
+                case "DEF":
+                    AcceptedInput();
+                    inputText.Clear();
+                    outputLabel.Text = "SHIP DESIGNATION:   " + defiant.shipName.ToUpper() + "\r\n" +
+                                                       "CLASS:   " + defiant.shipClass.ToUpper() + "\r\n" +
+                                                       "REGISTRY NUMBER:   " + defiant.registryNum.ToUpper() + "\r\n" +
+                                                       "GOVERNMENT AFFILIATION:   " + defiant.affiliation.ToUpper() + "\r\n" +
+                                                       "VESSEL OPERATOR:   " + defiant.shipOperator.ToUpper() + "\r\n" +
+                                                       "MOST RECENT CAPTAIN:   " + defiant.mostRecentCaptain.ToUpper() + "\r\n" +
+                                                       "FIRST OFFICER:   " + defiant.firstOfficer.ToUpper() + "\r\n" +
+                                                       "PRIMARY WEAPONRY:   " + defiant.primaryWeapons.ToUpper() + "\r\n" +
+                                                       "DEFENSE CAPABILITIES:   " + defiant.defenses.ToUpper() + "\r\n" +
+                                                       "CRUISING SPEED:   " + defiant.cruisingSpeed.ToUpper() + "\r\n" +
+                                                       "TOP SPEED:   " + defiant.topSpeed.ToUpper() + "\r\n" +
+                                                       "DECKS:   " + defiant.numberOfDecks + " DECKS" + "\r\n" +
+                                                       "CREW COMPLIMENT:   " + defiant.crewCompliment.ToUpper() + "\r\n" +
+                                                       "PROTOTYPE VESSEL:   " + defiant.isPrototype.ToUpper() + "\r\n" +
+                                                       "SERVICE STATUS:   " + defiant.serviceStatus.ToUpper();
+                    break;
+
+                case "VALIANT":
+                case "VAL":
+                    AcceptedInput();
+                    inputText.Clear();
+                    outputLabel.Text = "SHIP DESIGNATION:   " + valiant.shipName.ToUpper() + "\r\n" +
+                                                       "CLASS:   " + valiant.shipClass.ToUpper() + "\r\n" +
+                                                       "REGISTRY NUMBER:   " + valiant.registryNum.ToUpper() + "\r\n" +
+                                                       "GOVERNMENT AFFILIATION:   " + valiant.affiliation.ToUpper() + "\r\n" +
+                                                       "VESSEL OPERATOR:   " + valiant.shipOperator.ToUpper() + "\r\n" +
+                                                       "MOST RECENT CAPTAIN:   " + valiant.mostRecentCaptain.ToUpper() + "\r\n" +
+                                                       "FIRST OFFICER:   " + valiant.firstOfficer.ToUpper() + "\r\n" +
+                                                       "WEAPONRY:   " + valiant.primaryWeapons.ToUpper() + "\r\n" +
+                                                       "DEFENSE CAPABILITIES:   " + valiant.defenses.ToUpper() + "\r\n" +
+                                                       "CRUISING SPEED:   " + valiant.cruisingSpeed.ToUpper() + "\r\n" +
+                                                       "TOP SPEED:   " + valiant.topSpeed.ToUpper() + "\r\n" +
+                                                       "DECKS:   " + valiant.numberOfDecks + " DECKS" + "\r\n" +
+                                                       "CREW COMPLIMENT:   " + valiant.crewCompliment.ToUpper() + "\r\n" +
+                                                       "PROTOTYPE VESSEL:   " + valiant.isPrototype.ToUpper() + "\r\n" +
+                                                       "SERVICE STATUS:   " + valiant.serviceStatus.ToUpper();
+                    break;
+
+                case "VOYAGER":
+                case "VOY":
+                    AcceptedInput();
+                    inputText.Clear();
+                    outputLabel.Text = "SHIP DESIGNATION:   " + voyager.shipName.ToUpper() + "\r\n" +
+                                                       "CLASS:   " + voyager.shipClass.ToUpper() + "\r\n" +
+                                                       "REGISTRY NUMBER:   " + voyager.registryNum.ToUpper() + "\r\n" +
+                                                       "GOVERNMENT AFFILIATION:   " + voyager.affiliation.ToUpper() + "\r\n" +
+                                                       "VESSEL OPERATOR:   " + voyager.shipOperator.ToUpper() + "\r\n" +
+                                                       "MOST RECENT CAPTAIN:   " + voyager.mostRecentCaptain.ToUpper() + "\r\n" +
+                                                       "FIRST OFFICER:   " + voyager.firstOfficer.ToUpper() + "\r\n" +
+                                                       "WEAPONRY:   " + voyager.primaryWeapons.ToUpper() + "\r\n" +
+                                                       "DEFENSE CAPABILITIES:   " + voyager.defenses.ToUpper() + "\r\n" +
+                                                       "CRUISING SPEED:   " + voyager.cruisingSpeed.ToUpper() + "\r\n" +
+                                                       "TOP SPEED:   " + voyager.topSpeed.ToUpper() + "\r\n" +
+                                                       "DECKS:   " + voyager.numberOfDecks + " DECKS" + "\r\n" +
+                                                       "CREW COMPLIMENT:   " + voyager.crewCompliment.ToUpper() + "\r\n" +
+                                                       "PROTOTYPE VESSEL:   " + voyager.isPrototype.ToUpper() + "\r\n" +
+                                                       "SERVICE STATUS:   " + voyager.serviceStatus.ToUpper();
+                    break;
+
+                case "ROTARRAN":
+                case "ROT":
+                    AcceptedInput();
+                    inputText.Clear();
+                    outputLabel.Text = "SHIP DESIGNATION:   " + rotarran.shipName.ToUpper() + "\r\n" +
+                                                       "CLASS:   " + rotarran.shipClass.ToUpper() + "\r\n" +
+                                                       "REGISTRY NUMBER:   " + rotarran.registryNum.ToUpper() + "\r\n" +
+                                                       "GOVERNMENT AFFILIATION:   " + rotarran.affiliation.ToUpper() + "\r\n" +
+                                                       "VESSEL OPERATOR:   " + rotarran.shipOperator.ToUpper() + "\r\n" +
+                                                       "MOST RECENT CAPTAIN:   " + rotarran.mostRecentCaptain.ToUpper() + "\r\n" +
+                                                       "FIRST OFFICER:   " + rotarran.firstOfficer.ToUpper() + "\r\n" +
+                                                       "WEAPONRY:   " + rotarran.primaryWeapons.ToUpper() + "\r\n" +
+                                                       "DEFENSE CAPABILITIES:   " + rotarran.defenses.ToUpper() + "\r\n" +
+                                                       "CRUISING SPEED:   " + rotarran.cruisingSpeed.ToUpper() + "\r\n" +
+                                                       "TOP SPEED:   " + rotarran.topSpeed.ToUpper() + "\r\n" +
+                                                       "DECKS:   " + rotarran.numberOfDecks + " DECKS" + "\r\n" +
+                                                       "CREW COMPLIMENT:   " + rotarran.crewCompliment.ToUpper() + "\r\n" +
+                                                       "PROTOTYPE VESSEL:   " + rotarran.isPrototype.ToUpper() + "\r\n" +
+                                                       "SERVICE STATUS:   " + rotarran.serviceStatus.ToUpper();
+                    break;
+
+                default:
+                    DeniedInput();
+                    inputText.Clear();
+                    outputLabel.Text = $"THE VESSEL '{shipEntry.ToUpper()}' WAS NOT FOUND. PLEASE VERIFY SEARCH PARAMETERS AND TRY AGAIN.";
+                    break;
+                }
             }
         }
 

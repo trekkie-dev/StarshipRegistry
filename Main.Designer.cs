@@ -248,6 +248,7 @@
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(1011, 491);
             this.outputLabel.TabIndex = 40;
+            this.outputLabel.Text = " ";
             // 
             // mainForm
             // 

@@ -2,12 +2,12 @@ SearchKeyword,Affiliation,ShipOperator,ShipClass,ShipName,RegistryNum,PrimaryArm
 ENTERPRISE,United Earth,Starfleet,NX Class,USS Enterprise,NX-01,,Polarized Hull Plating,Jonathan Archer,T’Pol,Warp 2,Warp 5,,83 Crew Members,Prototype Vessel,Decommissioned 2161
 ENTERPRISE,United Federation of Planets,Starfleet,Constitution Class,USS Enterprise,NCC-1701,,,Christopher Pike,Una Chin-Riley,,,,,Not Prototype,
 ENTERPRISE,United Federation of Planets,Starfleet,Constitution Class,USS Enterprise,NCC-1701,,,James Tiberius Kirk,Spock,,,,,Not Prototype,
-ENTERPRISE,United Federation of Planets,Starfleet,Galaxy Class,USS Enterprise,NCC 1701-D,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Jean-Luc Picard,William T Riker,Warp 7,Warp 9.8,42 Decks,1000 – 6000 Crew Members,Not Prototype,Destroyed 2371
-YAMATO,United Federation of Planets,Starfleet,Galaxy Class,USS Yamato,NCC-71807 ,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Donald Varley,Steven Gerber,Warp 7,Warp 9.8,42 Decks,1000 – 6000 Crew Members,Not Prototype,Destroyed 2365
-ODYSSEY,United Federation of Planets,Starfleet,Galaxy Class,USS Odyssey,NCC-71832,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Declan Keogh,,Warp 7,Warp 9.8,42 Decks,1000 – 6000 Crew Members,Not Prototype,Destroyed 2370
+ENTERPRISE,United Federation of Planets,Starfleet,Galaxy Class,USS Enterprise,NCC 1701-D,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Jean-Luc Picard,William T Riker,Warp 7,Warp 9.8,42,1000 – 6000 Crew Members,Not Prototype,Destroyed 2371
+YAMATO,United Federation of Planets,Starfleet,Galaxy Class,USS Yamato,NCC-71807 ,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Donald Varley,Steven Gerber,Warp 7,Warp 9.8,42,1000 – 6000 Crew Members,Not Prototype,Destroyed 2365
+ODYSSEY,United Federation of Planets,Starfleet,Galaxy Class,USS Odyssey,NCC-71832,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Declan Keogh,,Warp 7,Warp 9.8,42,1000 – 6000 Crew Members,Not Prototype,Destroyed 2370
 VOYAGER,United Federation of Planets,Starfleet,Intrepid Class,USS Voyager,NCC-74656,,,Kathryn Janeway,Chakotay,Warp 6,Warp 9.975,,200 Crew Members,Not Prototype,In Service
-DEFIANT,United Federation of Planets,Starfleet,Defiant Class,USS Defiant,NX-724506,"4 phaser cannons, ~3 Phaser emitters, ?4 forward and ?2 aft photon/quantum torpedo launchers",Deflector Shields / Ablative Armor,Benjamin Lafayette Sisko,Kira Nerys / Worf,Warp 6,Warp 9.5,5 Decks,50 Crew Members,Prototype Vessel,In Service
-VALIANT,United Federation of Planets,Starfleet,Defiant Class,USS Valiant,NCC-74210,,,Tim Watters (acting),Karen Farris (acting),Warp 6,Warp 9.5,5 Decks,50 Crew Members,Not Prototype,Destroyed 2374
+DEFIANT,United Federation of Planets,Starfleet,Defiant Class,USS Defiant,NX-724506,"4 phaser cannons, ~3 Phaser emitters, ?4 forward and ?2 aft photon/quantum torpedo launchers",Deflector Shields / Ablative Armor,Benjamin Lafayette Sisko,Kira Nerys / Worf,Warp 6,Warp 9.5,5,50 Crew Members,Prototype Vessel,In Service
+VALIANT,United Federation of Planets,Starfleet,Defiant Class,USS Valiant,NCC-74210,,,Tim Watters (acting),Karen Farris (acting),Warp 6,Warp 9.5,5,50 Crew Members,Not Prototype,Destroyed 2374
 ,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,
 ROTARRAN,Klingon Empire,Klingon Defense Force,Bird of Prey,IKS Rotarran,,,,General Martok,Worf,,,,,Not Prototype,Active
