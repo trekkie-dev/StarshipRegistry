@@ -1,42 +1,42 @@
-SearchKeyword,Affiliation,ShipOperator,ShipClass,ShipName,RegistryNum,PrimaryArmament,Defenses,MostRecentCaptain,FirstOfficer,CruisingSpeed,TopSpeed,NumberOfDecks,CrewCompliment,IsPrototype,ServiceStatus
-ENTERPRISE,United Earth,Starfleet,NX Class,USS Enterprise,NX-01,,Polarized Hull Plating,Jonathan Archer,T’Pol,Warp 2,Warp 5,,83 Crew Members,Prototype Vessel,Decommissioned 2161
-ENTERPRISE,United Federation of Planets,Starfleet,Constitution Class,USS Enterprise,NCC-1701,,,Christopher Pike,Una Chin-Riley,,,,,Not Prototype,
-ENTERPRISE,United Federation of Planets,Starfleet,Constitution Class,USS Enterprise,NCC-1701,,,James Tiberius Kirk,Spock,,,,,Not Prototype,
-ENTERPRISE,United Federation of Planets,Starfleet,Galaxy Class,USS Enterprise,NCC 1701-D,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Jean-Luc Picard,William T Riker,Warp 7,Warp 9.8,42,1000 – 6000 Crew Members,Not Prototype,Destroyed 2371
-YAMATO,United Federation of Planets,Starfleet,Galaxy Class,USS Yamato,NCC-71807 ,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Donald Varley,Steven Gerber,Warp 7,Warp 9.8,42,1000 – 6000 Crew Members,Not Prototype,Destroyed 2365
-ODYSSEY,United Federation of Planets,Starfleet,Galaxy Class,USS Odyssey,NCC-71832,"12/14 Phaser Arrays, 2 Torpedo Launchers (250 Photon), Antimatter Mines",Deflector Shields,Declan Keogh,,Warp 7,Warp 9.8,42,1000 – 6000 Crew Members,Not Prototype,Destroyed 2370
-VOYAGER,United Federation of Planets,Starfleet,Intrepid Class,USS Voyager,NCC-74656,,,Kathryn Janeway,Chakotay,Warp 6,Warp 9.975,,200 Crew Members,Not Prototype,In Service
-DEFIANT,United Federation of Planets,Starfleet,Defiant Class,USS Defiant,NX-724506,"4 phaser cannons, ~3 Phaser emitters, ?4 forward and ?2 aft photon/quantum torpedo launchers",Deflector Shields / Ablative Armor,Benjamin Lafayette Sisko,Kira Nerys / Worf,Warp 6,Warp 9.5,5,50 Crew Members,Prototype Vessel,In Service
-VALIANT,United Federation of Planets,Starfleet,Defiant Class,USS Valiant,NCC-74210,,,Tim Watters (acting),Karen Farris (acting),Warp 6,Warp 9.5,5,50 Crew Members,Not Prototype,Destroyed 2374
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-ROTARRAN,Klingon Empire,Klingon Defense Force,Bird of Prey,IKS Rotarran,,,,General Martok,Worf,,,,,Not Prototype,Active
-,Klingon Empire,Klingon Defense Force,D-7 Battle Cruiser,IKS Gr’oth,unknown,,,Captain Koloth,Korax,,,,,Not Prototype,Active
-,Klingon Empire,Klingon Defense Force,D-7 Battle Cruiser,Unknown,unknown,,,Chancellor L’rell,Ash Tyler (acting),,,,,,
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,Borg Collective,Borg Collective,Borg Cube,,,,,,,,,,"130,000 Drones",,
-,Borg Collective,Borg Collective,Borg Sphere,,,,,,,,,,"11,000 Drones",,
-,Borg Collective,Borg Collective,Tactical Cube,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,Romulan Star Empire,,,,,,,,,,,,,,
-,Romulan Star Empire,,,,,,,,,,,,,,
-,Romulan Star Empire,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,Cardassian Union,,,,,,,,,,,,,,
-,Cardassian Union,,,,,,,,,,,,,,
-,Cardassian Union,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,,,Marauder Class,,,,,,,,,,,,
-,Ferengi Alliance,,,,,,,,,,,,,,
-,Ferengi Alliance,,,,,,,,,,,,,,
-,Ferengi Alliance,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-KUMARI,Andorian Empire,Andorian Imperial Guard,Battle Cruiser,IGS Kumari,,,,Thy’lek Shran,Talas,,,,,Not Prototype,Destroyed 2154
+AFFILIATION,SHIPOPERATOR,SHIPCLASS,SHIPNAME,REGISTRYNUM,PRIMARYARMAMENT,DEFENSES,MOSTRECENTCAPTAIN,FIRSTOFFICER,CRUISINGSPEED,TOPSPEED,NUMBEROFDECKS,CREWCOMPLIMENT,ISPROTOTYPE,SERVICESTATUS
+UNITED EARTH,STARFLEET,NX CLASS,USS ENTERPRISE,NX-01,,POLARIZED HULL PLATING,JONATHAN ARCHER,Tâ€™POL,WARP 2,WARP 5,,83 CREW MEMBERS,PROTOTYPE VESSEL,DECOMMISSIONED 2161
+UNITED FEDERATION OF PLANETS,STARFLEET,CONSTITUTION CLASS,USS ENTERPRISE A,NCC-1701,,,CHRISTOPHER PIKE,UNA CHIN-RILEY,,,,,NOT PROTOTYPE,
+UNITED FEDERATION OF PLANETS,STARFLEET,CONSTITUTION CLASS,USS ENTERPRISE,NCC-1701,,,JAMES TIBERIUS KIRK,SPOCK,,,,,NOT PROTOTYPE,
+UNITED FEDERATION OF PLANETS,STARFLEET,GALAXY CLASS,USS ENTERPRISE D,NCC 1701-D,12/14 PHASER ARRAYS / 2 TORPEDO LAUNCHERS (250 PHOTON) / ANTIMATTER MINES,DEFLECTOR SHIELDS,JEAN-LUC PICARD,WILLIAM T RIKER,WARP 7,WARP 9.8,42,1000 â€“ 6000 CREW MEMBERS,NOT PROTOTYPE,DESTROYED 2371
+UNITED FEDERATION OF PLANETS,STARFLEET,GALAXY CLASS,USS YAMATO,NCC-71807 ,12/14 PHASER ARRAYS / 2 TORPEDO LAUNCHERS (250 PHOTON) / ANTIMATTER MINES,DEFLECTOR SHIELDS,DONALD VARLEY,STEVEN GERBER,WARP 7,WARP 9.8,42,1000 â€“ 6000 CREW MEMBERS,NOT PROTOTYPE,DESTROYED 2365
+UNITED FEDERATION OF PLANETS,STARFLEET,GALAXY CLASS,USS ODYSSEY,NCC-71832,12/14 PHASER ARRAYS / 2 TORPEDO LAUNCHERS (250 PHOTON) / ANTIMATTER MINES,DEFLECTOR SHIELDS,DECLAN KEOGH,,WARP 7,WARP 9.8,42,1000 â€“ 6000 CREW MEMBERS,NOT PROTOTYPE,DESTROYED 2370
+UNITED FEDERATION OF PLANETS,STARFLEET,INTREPID CLASS,USS VOYAGER,NCC-74656,,,KATHRYN JANEWAY,CHAKOTAY,WARP 6,WARP 9.975,,200 CREW MEMBERS,NOT PROTOTYPE,IN SERVICE
+UNITED FEDERATION OF PLANETS,STARFLEET,DEFIANT CLASS,USS DEFIANT,NX-724506,4 PHASER CANNONS / 3 PHASER EMITTERS / 4 FORWARD AND 2 AFT PHOTON/QUANTUM TORPEDO LAUNCHERS,DEFLECTOR SHIELDS / ABLATIVE ARMOR,BENJAMIN LAFAYETTE SISKO,KIRA NERYS / WORF,WARP 6,WARP 9.5,5,50 CREW MEMBERS,PROTOTYPE VESSEL,IN SERVICE
+UNITED FEDERATION OF PLANETS,STARFLEET,DEFIANT CLASS,USS VALIANT,NCC-74210,,,TIM WATTERS (ACTING),KAREN FARRIS (ACTING),WARP 6,WARP 9.5,5,50 CREW MEMBERS,NOT PROTOTYPE,DESTROYED 2374
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+KLINGON EMPIRE,KLINGON DEFENSE FORCE,BIRD OF PREY,IKS ROTARRAN,,,,GENERAL MARTOK,WORF,,,,,NOT PROTOTYPE,ACTIVE
+KLINGON EMPIRE,KLINGON DEFENSE FORCE,D-7 BATTLE CRUISER,IKS GRâ€™OTH,UNKNOWN,,,CAPTAIN KOLOTH,KORAX,,,,,NOT PROTOTYPE,ACTIVE
+KLINGON EMPIRE,KLINGON DEFENSE FORCE,D-7 BATTLE CRUISER,UNKNOWN,UNKNOWN,,,CHANCELLOR Lâ€™RELL,ASH TYLER (ACTING),,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+BORG COLLECTIVE,BORG COLLECTIVE,BORG CUBE,,,,,,,,,,"130,000 DRONES",,
+BORG COLLECTIVE,BORG COLLECTIVE,BORG SPHERE,,,,,,,,,,"11,000 DRONES",,
+BORG COLLECTIVE,BORG COLLECTIVE,TACTICAL CUBE,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+ROMULAN STAR EMPIRE,,,,,,,,,,,,,,
+ROMULAN STAR EMPIRE,,,,,,,,,,,,,,
+ROMULAN STAR EMPIRE,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+CARDASSIAN UNION,,,,,,,,,,,,,,
+CARDASSIAN UNION,,,,,,,,,,,,,,
+CARDASSIAN UNION,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,MARAUDER CLASS,,,,,,,,,,,,
+FERENGI ALLIANCE,,,,,,,,,,,,,,
+FERENGI ALLIANCE,,,,,,,,,,,,,,
+FERENGI ALLIANCE,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+ANDORIAN EMPIRE,ANDORIAN IMPERIAL GUARD,BATTLE CRUISER,IGS KUMARI,,,,THYâ€™LEK SHRAN,TALAS,,,,,NOT PROTOTYPE,DESTROYED 2154

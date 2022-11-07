@@ -56,10 +56,11 @@ namespace StarshipRegistryGUI
                 mainForm spl = new mainForm(this);
                 spl.ShowDialog();
 
+
                 mainForm newForm = new mainForm();
                 newForm.Show();
 
-                this.Hide();
+                this.Close();
                 }
             else
                 {
