@@ -1,2 +1,2 @@
-# Starship-Registry
+# FEDERATION STARSHIP REGISTRY
 Code Kentucky Final Project
