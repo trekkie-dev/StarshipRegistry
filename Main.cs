@@ -1,4 +1,3 @@
-using StarshipRegistryGUI.Main_Feature_Classes;
 using System.Diagnostics;
 using System.Media;
 using System.Runtime.InteropServices;
@@ -187,12 +186,7 @@ public partial class mainForm : Form
         else if (statRegClicked == true)
             {
             confirmButton.Enabled = true;
-            NewRegistration();
             }
-        /*        else if (NewRegBtnClicked == true)
-                    {
-                    NewRegistration();
-                    }*/
         }
 
 
@@ -270,30 +264,7 @@ public partial class mainForm : Form
         }
 
 
-    public void NewRegistration()
-        {
-        int RegisterVessel = 1;
-        for (int n = 0; n < RegisterVessel; n++)
-            {
-            var RegisterStarship = new RegisterStarship();
-            string path = @"starships.csv";
-            string delimitter = ",";
 
-            selectionLabel.Text = "GOVERNMENT AFFILIATION: ";
-            RegisterStarship.affiliation = inputText.Text.ToUpper();
-
-            selectionLabel.Text = "SHIP OPERATOR: ";
-            RegisterStarship.shipOperator = inputText.Text.ToUpper();
-
-            selectionLabel.Text = "SHIP CLASS: ";
-            RegisterStarship.shipClass = inputText.Text.ToUpper();
-
-            string appendStarship = $"{RegisterStarship.affiliation}{delimitter}{RegisterStarship.shipOperator}{delimitter}{RegisterStarship.shipClass}";
-
-            File.AppendAllText(path, appendStarship);
-            }
-
-        }
 
     #endregion
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
             {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.headingLabel = new System.Windows.Forms.Label();
             this.inputText = new System.Windows.Forms.TextBox();
             this.AppTitleLabel = new System.Windows.Forms.Label();
@@ -293,10 +292,9 @@
             this.Controls.Add(this.outputLabel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "       ";
+            this.Text = "LCARS DATABASE ACCESS    ";
             this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PplusLogo)).EndInit();
             this.ResumeLayout(false);
