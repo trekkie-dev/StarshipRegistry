@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.headingLabel = new System.Windows.Forms.Label();
             this.inputText = new System.Windows.Forms.TextBox();
-            this.appTitleLabel = new System.Windows.Forms.Label();
+            this.AppTitleLabel = new System.Windows.Forms.Label();
             this.selectionLabel = new System.Windows.Forms.Label();
             this.starshipRegButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
@@ -43,6 +43,8 @@
             this.stationRegButton = new System.Windows.Forms.Button();
             this.newRegButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
+            this.EntryList = new System.Windows.Forms.TextBox();
+            this.EntriesLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // headingLabel
@@ -51,7 +53,7 @@
             this.headingLabel.Font = new System.Drawing.Font("Antonio", 31.92453F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.headingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
             this.headingLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.headingLabel.Location = new System.Drawing.Point(237, 172);
+            this.headingLabel.Location = new System.Drawing.Point(240, 172);
             this.headingLabel.Margin = new System.Windows.Forms.Padding(0);
             this.headingLabel.Name = "headingLabel";
             this.headingLabel.Size = new System.Drawing.Size(1017, 82);
@@ -66,31 +68,31 @@
             this.inputText.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.inputText.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.inputText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(191)))), ((int)(((byte)(189)))));
-            this.inputText.Location = new System.Drawing.Point(419, 259);
+            this.inputText.Location = new System.Drawing.Point(422, 259);
             this.inputText.MaxLength = 60;
             this.inputText.Name = "inputText";
             this.inputText.Size = new System.Drawing.Size(835, 28);
             this.inputText.TabIndex = 6;
             this.inputText.Enter += new System.EventHandler(this.confirmButton_Click);
             // 
-            // appTitleLabel
+            // AppTitleLabel
             // 
-            this.appTitleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.appTitleLabel.Font = new System.Drawing.Font("Antonio Thin", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.appTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
-            this.appTitleLabel.Location = new System.Drawing.Point(227, 62);
-            this.appTitleLabel.Name = "appTitleLabel";
-            this.appTitleLabel.Size = new System.Drawing.Size(1027, 110);
-            this.appTitleLabel.TabIndex = 19;
-            this.appTitleLabel.Text = "LCARS";
-            this.appTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AppTitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.AppTitleLabel.Font = new System.Drawing.Font("Antonio Thin", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AppTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
+            this.AppTitleLabel.Location = new System.Drawing.Point(230, 62);
+            this.AppTitleLabel.Name = "AppTitleLabel";
+            this.AppTitleLabel.Size = new System.Drawing.Size(1027, 110);
+            this.AppTitleLabel.TabIndex = 19;
+            this.AppTitleLabel.Text = "LCARS";
+            this.AppTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // selectionLabel
             // 
             this.selectionLabel.BackColor = System.Drawing.Color.Transparent;
             this.selectionLabel.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.selectionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
-            this.selectionLabel.Location = new System.Drawing.Point(243, 259);
+            this.selectionLabel.Location = new System.Drawing.Point(246, 259);
             this.selectionLabel.Name = "selectionLabel";
             this.selectionLabel.Size = new System.Drawing.Size(170, 30);
             this.selectionLabel.TabIndex = 20;
@@ -108,7 +110,7 @@
             this.starshipRegButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.starshipRegButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.starshipRegButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.starshipRegButton.Location = new System.Drawing.Point(1282, 99);
+            this.starshipRegButton.Location = new System.Drawing.Point(1281, 100);
             this.starshipRegButton.Name = "starshipRegButton";
             this.starshipRegButton.Size = new System.Drawing.Size(200, 54);
             this.starshipRegButton.TabIndex = 22;
@@ -126,7 +128,7 @@
             this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Location = new System.Drawing.Point(1282, 291);
+            this.exitButton.Location = new System.Drawing.Point(1281, 292);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(200, 54);
             this.exitButton.TabIndex = 25;
@@ -147,15 +149,16 @@
             // confirmButton
             // 
             this.confirmButton.BackColor = System.Drawing.Color.Transparent;
+            this.confirmButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.ConfirmButton;
             this.confirmButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.confirmButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmButton.FlatAppearance.BorderSize = 0;
             this.confirmButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.confirmButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmButton.Location = new System.Drawing.Point(44, 270);
+            this.confirmButton.Location = new System.Drawing.Point(44, 271);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(170, 55);
+            this.confirmButton.Size = new System.Drawing.Size(170, 54);
             this.confirmButton.TabIndex = 31;
             this.confirmButton.UseVisualStyleBackColor = true;
             this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
@@ -163,15 +166,16 @@
             // clearButton
             // 
             this.clearButton.BackColor = System.Drawing.Color.Transparent;
+            this.clearButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.ClearButton__1_;
             this.clearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.clearButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearButton.FlatAppearance.BorderSize = 0;
             this.clearButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.clearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearButton.Location = new System.Drawing.Point(44, 334);
+            this.clearButton.Location = new System.Drawing.Point(44, 335);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(170, 53);
+            this.clearButton.Size = new System.Drawing.Size(170, 54);
             this.clearButton.TabIndex = 33;
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
@@ -214,7 +218,7 @@
             this.stationRegButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.stationRegButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.stationRegButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stationRegButton.Location = new System.Drawing.Point(1282, 163);
+            this.stationRegButton.Location = new System.Drawing.Point(1281, 164);
             this.stationRegButton.Name = "stationRegButton";
             this.stationRegButton.Size = new System.Drawing.Size(200, 54);
             this.stationRegButton.TabIndex = 38;
@@ -232,7 +236,7 @@
             this.newRegButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.newRegButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.newRegButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newRegButton.Location = new System.Drawing.Point(1282, 227);
+            this.newRegButton.Location = new System.Drawing.Point(1281, 228);
             this.newRegButton.Name = "newRegButton";
             this.newRegButton.Size = new System.Drawing.Size(200, 54);
             this.newRegButton.TabIndex = 39;
@@ -244,20 +248,46 @@
             this.outputLabel.BackColor = System.Drawing.Color.Transparent;
             this.outputLabel.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.outputLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
-            this.outputLabel.Location = new System.Drawing.Point(243, 308);
+            this.outputLabel.Location = new System.Drawing.Point(246, 308);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(1011, 491);
             this.outputLabel.TabIndex = 40;
             this.outputLabel.Text = " ";
+            // 
+            // EntryList
+            // 
+            this.EntryList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
+            this.EntryList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EntryList.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EntryList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
+            this.EntryList.Location = new System.Drawing.Point(1263, 415);
+            this.EntryList.Multiline = true;
+            this.EntryList.Name = "EntryList";
+            this.EntryList.Size = new System.Drawing.Size(221, 374);
+            this.EntryList.TabIndex = 41;
+            this.EntryList.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // EntriesLabel
+            // 
+            this.EntriesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.EntriesLabel.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EntriesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
+            this.EntriesLabel.Location = new System.Drawing.Point(1319, 384);
+            this.EntriesLabel.Name = "EntriesLabel";
+            this.EntriesLabel.Size = new System.Drawing.Size(170, 30);
+            this.EntriesLabel.TabIndex = 42;
+            this.EntriesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // mainForm
             // 
             this.AcceptButton = this.confirmButton;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
-            this.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.lcarsRedesign;
+            this.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.lcarsPicardEra;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.EntriesLabel);
+            this.Controls.Add(this.EntryList);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.newRegButton);
             this.Controls.Add(this.stationRegButton);
@@ -271,7 +301,7 @@
             this.Controls.Add(this.starshipRegButton);
             this.Controls.Add(this.selectionLabel);
             this.Controls.Add(this.inputText);
-            this.Controls.Add(this.appTitleLabel);
+            this.Controls.Add(this.AppTitleLabel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -287,7 +317,7 @@
         #endregion
         private Label headingLabel;
         private TextBox inputText;
-        private Label appTitleLabel;
+        private Label AppTitleLabel;
         private Label selectionLabel;
         private Button starshipRegButton;
         private Button exitButton;
@@ -299,5 +329,7 @@
         private Button stationRegButton;
         private Button newRegButton;
         private Label outputLabel;
+        private TextBox EntryList;
+        private Label EntriesLabel;
         }
     }

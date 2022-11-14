@@ -21,7 +21,6 @@
 
         string[] shipData = rows.Split(',');
 
-        // Parse Data
         this.affiliation = shipData[0];
         this.shipOperator = shipData[1];
         this.shipClass = shipData[2];
@@ -53,7 +52,7 @@
             $"FIRST OFFICER:   {firstOfficer}" + "\n" +
             $"CRUISING SPEED:   {cruisingSpeed}" + "\n" +
             $"TOP SPEED:   {topSpeed}" + "\n" +
-            $"DECKS:   {numberOfDecks}" + "\n" +
+            $"DECKS:   {numberOfDecks}" + " DECKS" + "\n" +
             $"CREW COMPLIMENT:   {crewCompliment}" + "\n" +
             $"PROTOTYPE VESSEL:   {isPrototype}" + "\n" +
             $"SERVICE STATUS:   {serviceStatus}";

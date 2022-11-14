@@ -61,11 +61,31 @@ namespace StarshipRegistryGUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ClearButton__1_ {
+            get {
+                object obj = ResourceManager.GetObject("ClearButton (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream communications_end_transmission {
             get {
                 return ResourceManager.GetStream("communications_end_transmission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ConfirmButton {
+            get {
+                object obj = ResourceManager.GetObject("ConfirmButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -167,6 +187,16 @@ namespace StarshipRegistryGUI.Properties {
         internal static System.IO.UnmanagedMemoryStream keyok6 {
             get {
                 return ResourceManager.GetStream("keyok6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lcarsPicardEra {
+            get {
+                object obj = ResourceManager.GetObject("lcarsPicardEra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
