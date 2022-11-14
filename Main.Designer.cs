@@ -38,13 +38,13 @@
             this.infoTextBox = new System.Windows.Forms.Label();
             this.confirmButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
-            this.resetLcars = new System.Windows.Forms.Button();
             this.stardateLabel = new System.Windows.Forms.Label();
             this.stationRegButton = new System.Windows.Forms.Button();
-            this.newRegButton = new System.Windows.Forms.Button();
+            this.WatchButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
-            this.EntryList = new System.Windows.Forms.TextBox();
-            this.EntriesLabel = new System.Windows.Forms.Label();
+            this.WatchOnPPlus = new System.Windows.Forms.LinkLabel();
+            this.PplusLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PplusLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // headingLabel
@@ -68,10 +68,10 @@
             this.inputText.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.inputText.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.inputText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(191)))), ((int)(((byte)(189)))));
-            this.inputText.Location = new System.Drawing.Point(422, 259);
+            this.inputText.Location = new System.Drawing.Point(419, 259);
             this.inputText.MaxLength = 60;
             this.inputText.Name = "inputText";
-            this.inputText.Size = new System.Drawing.Size(835, 28);
+            this.inputText.Size = new System.Drawing.Size(838, 28);
             this.inputText.TabIndex = 6;
             this.inputText.Enter += new System.EventHandler(this.confirmButton_Click);
             // 
@@ -94,9 +94,9 @@
             this.selectionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
             this.selectionLabel.Location = new System.Drawing.Point(246, 259);
             this.selectionLabel.Name = "selectionLabel";
-            this.selectionLabel.Size = new System.Drawing.Size(170, 30);
+            this.selectionLabel.Size = new System.Drawing.Size(167, 30);
             this.selectionLabel.TabIndex = 20;
-            this.selectionLabel.Text = "ASDF";
+            this.selectionLabel.Text = "SEARCH PARAMETERS:";
             this.selectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // starshipRegButton
@@ -180,21 +180,6 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
-            // resetLcars
-            // 
-            this.resetLcars.BackColor = System.Drawing.Color.Transparent;
-            this.resetLcars.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.resetLcars.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetLcars.FlatAppearance.BorderSize = 0;
-            this.resetLcars.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.resetLcars.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.resetLcars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetLcars.Location = new System.Drawing.Point(43, 188);
-            this.resetLcars.Name = "resetLcars";
-            this.resetLcars.Size = new System.Drawing.Size(170, 68);
-            this.resetLcars.TabIndex = 36;
-            this.resetLcars.UseVisualStyleBackColor = true;
-            // 
             // stardateLabel
             // 
             this.stardateLabel.BackColor = System.Drawing.Color.Transparent;
@@ -225,23 +210,23 @@
             this.stationRegButton.UseVisualStyleBackColor = false;
             this.stationRegButton.Click += new System.EventHandler(this.stationRegButton_Click);
             // 
-            // newRegButton
+            // WatchButton
             // 
-            this.newRegButton.BackColor = System.Drawing.Color.Transparent;
-            this.newRegButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.newRegButton;
-            this.newRegButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.newRegButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newRegButton.FlatAppearance.BorderSize = 0;
-            this.newRegButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.newRegButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.newRegButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.newRegButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newRegButton.Location = new System.Drawing.Point(1281, 228);
-            this.newRegButton.Name = "newRegButton";
-            this.newRegButton.Size = new System.Drawing.Size(200, 54);
-            this.newRegButton.TabIndex = 39;
-            this.newRegButton.UseVisualStyleBackColor = false;
-            this.newRegButton.Click += new System.EventHandler(this.newRegButton_Click);
+            this.WatchButton.BackColor = System.Drawing.Color.Transparent;
+            this.WatchButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.watchButton;
+            this.WatchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.WatchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.WatchButton.FlatAppearance.BorderSize = 0;
+            this.WatchButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.WatchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.WatchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.WatchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WatchButton.Location = new System.Drawing.Point(1281, 228);
+            this.WatchButton.Name = "WatchButton";
+            this.WatchButton.Size = new System.Drawing.Size(200, 54);
+            this.WatchButton.TabIndex = 39;
+            this.WatchButton.UseVisualStyleBackColor = false;
+            this.WatchButton.Click += new System.EventHandler(this.WatchButton_Click);
             // 
             // outputLabel
             // 
@@ -254,45 +239,48 @@
             this.outputLabel.TabIndex = 40;
             this.outputLabel.Text = " ";
             // 
-            // EntryList
+            // WatchOnPPlus
             // 
-            this.EntryList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
-            this.EntryList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EntryList.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EntryList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
-            this.EntryList.Location = new System.Drawing.Point(1263, 415);
-            this.EntryList.Multiline = true;
-            this.EntryList.Name = "EntryList";
-            this.EntryList.Size = new System.Drawing.Size(221, 374);
-            this.EntryList.TabIndex = 41;
-            this.EntryList.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.WatchOnPPlus.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
+            this.WatchOnPPlus.AutoSize = true;
+            this.WatchOnPPlus.BackColor = System.Drawing.Color.Transparent;
+            this.WatchOnPPlus.Font = new System.Drawing.Font("Antonio", 16.30189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WatchOnPPlus.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.WatchOnPPlus.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
+            this.WatchOnPPlus.Location = new System.Drawing.Point(631, 699);
+            this.WatchOnPPlus.Name = "WatchOnPPlus";
+            this.WatchOnPPlus.Size = new System.Drawing.Size(260, 37);
+            this.WatchOnPPlus.TabIndex = 42;
+            this.WatchOnPPlus.TabStop = true;
+            this.WatchOnPPlus.Text = "WATCH ON PARAMOUNT PLUS";
+            this.WatchOnPPlus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.WatchOnPPlus.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WatchOnPPlus_LinkClicked);
             // 
-            // EntriesLabel
+            // PplusLogo
             // 
-            this.EntriesLabel.BackColor = System.Drawing.Color.Transparent;
-            this.EntriesLabel.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EntriesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
-            this.EntriesLabel.Location = new System.Drawing.Point(1319, 384);
-            this.EntriesLabel.Name = "EntriesLabel";
-            this.EntriesLabel.Size = new System.Drawing.Size(170, 30);
-            this.EntriesLabel.TabIndex = 42;
-            this.EntriesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PplusLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PplusLogo.Image = global::StarshipRegistryGUI.Properties.Resources.Paramount__logo;
+            this.PplusLogo.Location = new System.Drawing.Point(589, 489);
+            this.PplusLogo.Name = "PplusLogo";
+            this.PplusLogo.Size = new System.Drawing.Size(342, 191);
+            this.PplusLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PplusLogo.TabIndex = 43;
+            this.PplusLogo.TabStop = false;
+            this.PplusLogo.Click += new System.EventHandler(this.PplusLogo_Click);
             // 
             // mainForm
             // 
             this.AcceptButton = this.confirmButton;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
-            this.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.lcarsPicardEra;
+            this.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.lcarsPicardEra1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.Controls.Add(this.EntriesLabel);
-            this.Controls.Add(this.EntryList);
-            this.Controls.Add(this.outputLabel);
-            this.Controls.Add(this.newRegButton);
+            this.Controls.Add(this.PplusLogo);
+            this.Controls.Add(this.WatchOnPPlus);
+            this.Controls.Add(this.WatchButton);
             this.Controls.Add(this.stationRegButton);
             this.Controls.Add(this.stardateLabel);
-            this.Controls.Add(this.resetLcars);
             this.Controls.Add(this.infoTextBox);
             this.Controls.Add(this.headingLabel);
             this.Controls.Add(this.clearButton);
@@ -302,13 +290,15 @@
             this.Controls.Add(this.selectionLabel);
             this.Controls.Add(this.inputText);
             this.Controls.Add(this.AppTitleLabel);
+            this.Controls.Add(this.outputLabel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LCARS • DATABASE ACCESS";
+            this.Text = "       ";
             this.Load += new System.EventHandler(this.mainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PplusLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,12 +314,11 @@
         private Label infoTextBox;
         private Button confirmButton;
         private Button clearButton;
-        private Button resetLcars;
         private Label stardateLabel;
         private Button stationRegButton;
-        private Button newRegButton;
+        private Button WatchButton;
         private Label outputLabel;
-        private TextBox EntryList;
-        private Label EntriesLabel;
+        private LinkLabel WatchOnPPlus;
+        private PictureBox PplusLogo;
         }
     }

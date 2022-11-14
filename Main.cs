@@ -1,4 +1,5 @@
 using StarshipRegistryGUI.Main_Feature_Classes;
+using System.Diagnostics;
 using System.Media;
 using System.Runtime.InteropServices;
 
@@ -29,8 +30,8 @@ public partial class mainForm : Form
         stationRegButton.MouseEnter += new EventHandler(stationRegButton_MouseEnter);
         stationRegButton.MouseLeave += new EventHandler(stationRegButton_MouseLeave);
 
-        newRegButton.MouseEnter += new EventHandler(newRegButton_MouseEnter);
-        newRegButton.MouseLeave += new EventHandler(newRegButton_MouseLeave);
+        WatchButton.MouseEnter += new EventHandler(watchButton_MouseEnter);
+        WatchButton.MouseLeave += new EventHandler(watchButton_MouseLeave);
 
         exitButton.MouseEnter += new EventHandler(exitButton_MouseEnter);
         exitButton.MouseLeave += new EventHandler(exitButton_MouseLeave);
@@ -39,6 +40,8 @@ public partial class mainForm : Form
         inputText.Visible = false;
         selectionLabel.Visible = false;
         outputLabel.Visible = false;
+        PplusLogo.Visible = false;
+        WatchOnPPlus.Visible = false;
 
         }
 
@@ -96,7 +99,7 @@ public partial class mainForm : Form
     public void StarshipButton()
         {
         // helper methods
-        primeElementVisibility();
+        AlwaysVisible();
         ClearTextFields();
         FocusInput();
 
@@ -105,7 +108,6 @@ public partial class mainForm : Form
         headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
         headingLabel.Text = "/ STARSHIP REGISTRY";
         selectionLabel.Text = "SEARCH PARAMETERS:";
-        EntriesLabel.Text = "SHIPS IN DATABASE";
 
         outputLabel.Text = "SEARCH INSTRUCTIONS: \n" +
             "ENTER THE SEARCH KEYWORD OF THE VESSEL YOU WISH TO QUERY [EX. 'NCC-1701' OR 'USS ENTERPRISE'] THEN PRESS ENTER OR CLICK 'CONFIRM'.";
@@ -125,7 +127,7 @@ public partial class mainForm : Form
 
     public void StationButton()
         {
-        primeElementVisibility();
+        AlwaysVisible();
         ClearTextFields();
         FocusInput();
 
@@ -134,26 +136,29 @@ public partial class mainForm : Form
         headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
         headingLabel.Text = "/ STARBASE DATABASE";
         selectionLabel.Text = "SEARCH PARAMETERS:";
-        EntriesLabel.Text = "STATIONS IN DATABASE";
 
         outputLabel.Text = "SEARCH INSTRUCTIONS: \n" +
                     "ENTER THE NAME OF THE STARBASE YOU WISH TO QUERY [EX. 'DEEP SPACE 9'] THEN PRESS ENTER OR CLICK 'CONFIRM'.";
         }
 
 
-    // NEW REGISTRY BUTTON
-    private void newRegButton_Click(object sender, EventArgs e)
+    // WATCH STAR TREK BUTTON
+    private void WatchButton_Click(object sender, EventArgs e)
         {
         // helper methods
-        primeElementVisibility();
         ClearTextFields();
-        FocusInput();
+
+        inputText.Visible = false;
+        PplusLogo.Visible = true;
+        WatchOnPPlus.Visible = true;
 
         randomKeySound(); // plays a random sound when buttons are pressed
-        AppTitleLabel.Text = "// SPACECRAFT REGISTRATION";
+        AppTitleLabel.Text = "// LET'S SEE WHAT'S OUT THERE";
 
         headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
-        headingLabel.Text = "/ REGISTER NEW STARSHIP OR SPACE STATION";
+        headingLabel.Text = "/ WHERE TO STREAM THE STAR TREK UNIVERSE";
+        selectionLabel.Text = String.Empty;
+        outputLabel.Text = "\"You know the greatest danger facing us is ourselves, and irrational fear of the unknown. There is no such thing as the unknown. Only things temporarily hidden, temporarily not understood.\" \n\r                                                           - James T. Kirk // 'The Corbomite Maneuver' Star Trek: The Original Series S1E10";
         }
 
     // Exit button functionality
@@ -234,22 +239,6 @@ public partial class mainForm : Form
                 var searchResult = ships.Where(s => s.ShipName.Contains(findShip) || s.registryNum.Contains(findShip)).FirstOrDefault();
                 outputLabel.Text = searchResult.ToString();
                 }
-
-
-            var registryNum = new List<string>();
-            var shipName = new List<string>();
-
-            for (int i = 1; i < csvLines.Length; i++)
-                {
-                string[] rowData = csvLines[i].Split(',');
-                registryNum.Add(rowData[4]);
-                shipName.Add(rowData[3]);
-                }
-
-            for (int i = 0; i < shipName.Count; i++)
-                {
-                EntryList.Text = ($"{registryNum[i]} {shipName[i]}");
-                }
             }
         }
 
@@ -283,20 +272,27 @@ public partial class mainForm : Form
 
     public void NewRegistration()
         {
-        var numberOfRecords = 1;
-        var newVessel = new List<RegisterStarship>();
-        for (int i = 0; i < numberOfRecords; i++)
+        int RegisterVessel = 1;
+        for (int n = 0; n < RegisterVessel; n++)
             {
-            var entry = new RegisterStarship();
+            var RegisterStarship = new RegisterStarship();
+            string path = @"starships.csv";
+            string delimitter = ",";
+
             selectionLabel.Text = "GOVERNMENT AFFILIATION: ";
-            entry.affiliation = inputText.Text;
+            RegisterStarship.affiliation = inputText.Text.ToUpper();
 
             selectionLabel.Text = "SHIP OPERATOR: ";
-            entry.shipOperator = inputText.Text;
+            RegisterStarship.shipOperator = inputText.Text.ToUpper();
+
+            selectionLabel.Text = "SHIP CLASS: ";
+            RegisterStarship.shipClass = inputText.Text.ToUpper();
+
+            string appendStarship = $"{RegisterStarship.affiliation}{delimitter}{RegisterStarship.shipOperator}{delimitter}{RegisterStarship.shipClass}";
+
+            File.AppendAllText(path, appendStarship);
             }
 
-        foreach (var entry in newVessel)
-            outputLabel.Text = "GOVERNMENT AFFILIATION: " + entry.affiliation.ToUpper() + "\n\rSHIP OPERATOR: " + entry.shipOperator.ToUpper();
         }
 
     #endregion
@@ -327,14 +323,14 @@ public partial class mainForm : Form
         this.stationRegButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.statRegButton));
         }
 
-    void newRegButton_MouseEnter(object sender, EventArgs e)     // NEW REGISTRY BUTTON
+    void watchButton_MouseEnter(object sender, EventArgs e)     // NEW REGISTRY BUTTON
         {
-        this.newRegButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.newRegOver));
+        this.WatchButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.WatchButtonOver));
         }
 
-    void newRegButton_MouseLeave(object sender, EventArgs e)
+    void watchButton_MouseLeave(object sender, EventArgs e)
         {
-        this.newRegButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.newRegButton));
+        this.WatchButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.watchButton));
         }
 
     void exitButton_MouseEnter(object sender, EventArgs e)     // EXIT BUTTON
@@ -372,10 +368,11 @@ public partial class mainForm : Form
 
 
     // SETS VISIBILITY OF TEXT FIELDS ON ACCESS & REGISTER SCREENS
-    private void primeElementVisibility()
+    private void AlwaysVisible()
         {
+        AppTitleLabel.Visible = true;
+        headingLabel.Visible = true;
         inputText.Visible = true;
-        //headingLabel.Visible = true;
         selectionLabel.Visible = true;
         outputLabel.Visible = true;
         }
@@ -428,9 +425,20 @@ public partial class mainForm : Form
         SoundPlayer ranKeySound = new SoundPlayer(randomSound);
         ranKeySound.PlaySync();
         }
+
+    private void WatchOnPPlus_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+        Process.Start(new ProcessStartInfo() { FileName = "www.paramountplus.com", UseShellExecute = true });
+        }
+
+    private void PplusLogo_Click(object sender, EventArgs e)
+        {
+        Process.Start(new ProcessStartInfo() { FileName = "www.paramountplus.com", UseShellExecute = true });
+        }
     }
 
 
 
 
 #endregion
+

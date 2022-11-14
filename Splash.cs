@@ -60,7 +60,7 @@ namespace StarshipRegistryGUI
                 mainForm newForm = new mainForm();
                 newForm.Show();
 
-                this.Close();
+                Application.Exit();
                 }
             else
                 {
