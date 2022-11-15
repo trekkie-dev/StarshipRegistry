@@ -20,7 +20,7 @@ namespace StarshipRegistryGUI
 
         private void Splash_Load(object sender, EventArgs e)
             {
-            SoundPlayer sPlayer = new SoundPlayer(@"c:\users\Chris\Downloads\scrshow.wav");
+            SoundPlayer sPlayer = new SoundPlayer(Properties.Resources.scrshow);
             sPlayer.Play();
             }
 
@@ -31,7 +31,7 @@ namespace StarshipRegistryGUI
         public void splashLogout_Click(object sender, EventArgs e)
             {
             // plays exit program sound
-            SoundPlayer sPlayer = new SoundPlayer(@"c:\users\Chris\Downloads\communications_end_transmission.wav");
+            SoundPlayer sPlayer = new SoundPlayer(Properties.Resources.communications_end_transmission);
             sPlayer.PlaySync();
 
             Application.Exit(); // exits the program
@@ -49,15 +49,15 @@ namespace StarshipRegistryGUI
                 accessStatus.ForeColor = Color.FromArgb(153, 170, 102);
                 accessStatus.Text = "ACCESS GRANTED.";
 
-                SoundPlayer sPlayer = new SoundPlayer(@"c:\Users\Chris\Downloads\input_ok_3_clean.wav");
+                SoundPlayer sPlayer = new SoundPlayer(Properties.Resources.input_ok_3_clean);
                 sPlayer.PlaySync();
 
                 // takes input from User Name field and sends it to mainForm
-                mainForm spl = new mainForm(this);
+                MainForm spl = new MainForm(this);
                 spl.ShowDialog();
 
 
-                mainForm newForm = new mainForm();
+                MainForm newForm = new MainForm();
                 newForm.Show();
 
                 Application.Exit();
@@ -65,7 +65,7 @@ namespace StarshipRegistryGUI
             else
                 {
                 // failed input audio indicator
-                SoundPlayer sPlayer = new SoundPlayer(@"c:\Users\Chris\Downloads\input_failed_clean.wav");
+                SoundPlayer sPlayer = new SoundPlayer(Properties.Resources.input_failed_clean);
                 sPlayer.Play();
 
                 // failed input text

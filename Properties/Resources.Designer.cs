@@ -63,9 +63,19 @@ namespace StarshipRegistryGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ClearButton__1_ {
+        internal static System.Drawing.Bitmap ClearButton {
             get {
-                object obj = ResourceManager.GetObject("ClearButton (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("ClearButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ClearButtonOver {
+            get {
+                object obj = ResourceManager.GetObject("ClearButtonOver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -85,6 +95,16 @@ namespace StarshipRegistryGUI.Properties {
         internal static System.Drawing.Bitmap ConfirmButton {
             get {
                 object obj = ResourceManager.GetObject("ConfirmButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ConfirmButtonOver {
+            get {
+                object obj = ResourceManager.GetObject("ConfirmButtonOver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +223,9 @@ namespace StarshipRegistryGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lcarsPicardEra1 {
+        internal static System.Drawing.Bitmap lcarsPicardEra__1_ {
             get {
-                object obj = ResourceManager.GetObject("lcarsPicardEra1", resourceCulture);
+                object obj = ResourceManager.GetObject("lcarsPicardEra (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -282,16 +302,6 @@ namespace StarshipRegistryGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap StarTrekLogo {
-            get {
-                object obj = ResourceManager.GetObject("StarTrekLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap statRegButton {
             get {
                 object obj = ResourceManager.GetObject("statRegButton", resourceCulture);
@@ -315,16 +325,6 @@ namespace StarshipRegistryGUI.Properties {
         internal static System.IO.UnmanagedMemoryStream tng_commandcenter {
             get {
                 return ResourceManager.GetStream("tng_commandcenter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TngLogo {
-            get {
-                object obj = ResourceManager.GetObject("TngLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

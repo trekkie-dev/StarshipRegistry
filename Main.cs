@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace StarshipRegistryGUI;
 
-public partial class mainForm : Form
+public partial class MainForm : Form
     {
     #region Basic Form Functionality
     [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -15,7 +15,7 @@ public partial class mainForm : Form
     readonly Splash Spl;
 
 
-    public mainForm(Splash spl)
+    public MainForm(Splash spl)
         {
         InitializeComponent();
         Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20)); // corner rounding
@@ -23,17 +23,25 @@ public partial class mainForm : Form
 
 
         // BUTTON MOUSE OVER
-        starshipRegButton.MouseEnter += new EventHandler(starshipRegButton_MouseEnter);
-        starshipRegButton.MouseLeave += new EventHandler(starshipRegButton_MouseLeave);
+        StarshipButton.MouseEnter += new EventHandler(StarshipRegButton_MouseEnter);
+        StarshipButton.MouseLeave += new EventHandler(StarshipRegButton_MouseLeave);
 
-        stationRegButton.MouseEnter += new EventHandler(stationRegButton_MouseEnter);
-        stationRegButton.MouseLeave += new EventHandler(stationRegButton_MouseLeave);
+        StationButton.MouseEnter += new EventHandler(StationRegButton_MouseEnter);
+        StationButton.MouseLeave += new EventHandler(StationRegButton_MouseLeave);
 
-        WatchButton.MouseEnter += new EventHandler(watchButton_MouseEnter);
-        WatchButton.MouseLeave += new EventHandler(watchButton_MouseLeave);
+        WatchButton.MouseEnter += new EventHandler(WatchButton_MouseEnter);
+        WatchButton.MouseLeave += new EventHandler(WatchButton_MouseLeave);
 
-        exitButton.MouseEnter += new EventHandler(exitButton_MouseEnter);
-        exitButton.MouseLeave += new EventHandler(exitButton_MouseLeave);
+        ExitButton.MouseEnter += new EventHandler(ExitButton_MouseEnter);
+        ExitButton.MouseLeave += new EventHandler(ExitButton_MouseLeave);
+
+        ClearButton.MouseEnter += new EventHandler(ClearButton_MouseEnter);
+        ClearButton.MouseLeave += new EventHandler(ClearButton_MouseLeave);
+
+        ConfirmButton.MouseEnter += new EventHandler(ConfirmButton_MouseEnter);
+        ConfirmButton.MouseLeave += new EventHandler(ConfirmButton_MouseLeave);
+
+
 
         // field visibility at start
         inputText.Visible = false;
@@ -45,15 +53,15 @@ public partial class mainForm : Form
         }
 
 
-    public mainForm()
+    public MainForm()
         {
         }
 
-    private void mainForm_Load(object sender, EventArgs e)
+    private void MainForm_Load(object sender, EventArgs e)
         {
 
         // show screen sound
-        SoundPlayer sPlayer = new SoundPlayer(@"c:\users\Chris\Downloads\scrshow.wav");
+        SoundPlayer sPlayer = new(Properties.Resources.scrshow);
         sPlayer.Play();
 
         // adjust heading font size
@@ -84,23 +92,25 @@ public partial class mainForm : Form
     #region Primary Navigation
     // Activates Starship Registry button and accesses StarshipSearch function (in Confirm Button Method)
     public bool StarshipBtnClicked = false;
-    public void accessBtn_Click(object sender, EventArgs e)
+    public void AccessBtn_Click(object sender, EventArgs e)
         {
         StarshipBtnClicked = true;
         statRegClicked = false;
 
-        randomKeySound();
-        StarshipButton();
+        RandomKeySound();
+        StarshipSearchScreen();
 
         }
 
     // Call-to-Action and default appearance for Starship Search functionality
-    public void StarshipButton()
+    public void StarshipSearchScreen()
         {
         // helper methods
         AlwaysVisible();
         ClearTextFields();
         FocusInput();
+        PplusLogo.Visible = false;
+        WatchOnPPlus.Visible = false;
 
         AppTitleLabel.Text = "// DATABASE OF IDENTIFIED STARSHIPS";
 
@@ -109,26 +119,32 @@ public partial class mainForm : Form
         selectionLabel.Text = "SEARCH PARAMETERS:";
 
         outputLabel.Text = "SEARCH INSTRUCTIONS: \n" +
-            "ENTER THE SEARCH KEYWORD OF THE VESSEL YOU WISH TO QUERY [EX. 'NCC-1701' OR 'USS ENTERPRISE'] THEN PRESS ENTER OR CLICK 'CONFIRM'.";
+            "ENTER THE SEARCH KEYWORD OF THE VESSEL YOU WISH TO QUERY [EX. 'NCC-1701' OR 'USS ENTERPRISE'] THEN PRESS ENTER OR CLICK 'CONFIRM'. \n\r\n\r" +
+            "CONSULT THE LIST OF REGISTERED VESSELS TO THE RIGHT IF YOU NEED ASSISTANCE WITH YOUR SEARCH.";
         }
+
+
 
     // Activates Station Registry method
     public bool statRegClicked = false;
-    private void stationRegButton_Click(object sender, EventArgs e)
+    private void StationRegButton_Click(object sender, EventArgs e)
         {
         StarshipBtnClicked = false;
         statRegClicked = true;
 
-        randomKeySound(); // plays a random sound when buttons are pressed
-        StationButton();
-
+        RandomKeySound(); // plays a random sound when buttons are pressed
+        StationSearchScreen();
         }
 
-    public void StationButton()
+
+
+    public void StationSearchScreen()
         {
         AlwaysVisible();
         ClearTextFields();
         FocusInput();
+        PplusLogo.Visible = false;
+        WatchOnPPlus.Visible = false;
 
         AppTitleLabel.Text = "// DATABASE OF PORTS AND STARBASES";
 
@@ -137,8 +153,11 @@ public partial class mainForm : Form
         selectionLabel.Text = "SEARCH PARAMETERS:";
 
         outputLabel.Text = "SEARCH INSTRUCTIONS: \n" +
-                    "ENTER THE NAME OF THE STARBASE YOU WISH TO QUERY [EX. 'DEEP SPACE 9'] THEN PRESS ENTER OR CLICK 'CONFIRM'.";
+                    "ENTER THE NAME OF THE STARBASE YOU WISH TO QUERY [EX. 'DEEP SPACE 9'] THEN PRESS ENTER OR CLICK 'CONFIRM'.\n\r\n\r" +
+            "CONSULT THE LIST OF REGISTERED SPACE STATIONS TO THE RIGHT IF YOU NEED ASSISTANCE WITH YOUR SEARCH.";
         }
+
+
 
 
     // WATCH STAR TREK BUTTON
@@ -150,21 +169,32 @@ public partial class mainForm : Form
         inputText.Visible = false;
         PplusLogo.Visible = true;
         WatchOnPPlus.Visible = true;
+        RegisteredShips.Text = String.Empty;
 
-        randomKeySound(); // plays a random sound when buttons are pressed
+        RandomKeySound(); // plays a random sound when buttons are pressed
         AppTitleLabel.Text = "// LET'S SEE WHAT'S OUT THERE";
 
         headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
         headingLabel.Text = "/ WHERE TO STREAM THE STAR TREK UNIVERSE";
-        selectionLabel.Text = String.Empty;
-        outputLabel.Text = "\"You know the greatest danger facing us is ourselves, and irrational fear of the unknown. There is no such thing as the unknown. Only things temporarily hidden, temporarily not understood.\" \n\r                                                           - James T. Kirk // 'The Corbomite Maneuver' Star Trek: The Original Series S1E10";
+        selectionLabel.Text = "ENGAGE!";
+        outputLabel.Text = "\"You know the greatest danger facing us is ourselves, and irrational fear of the unknown. There is no such thing as the unknown. Only things temporarily hidden, temporarily not understood.\" \n\r\n\r- James T. Kirk // 'The Corbomite Maneuver' Star Trek: The Original Series S1E10";
         }
 
-    // Exit button functionality
-    private void exitBtn_Click(object sender, EventArgs e)
+    private void WatchOnPPlus_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+        Process.Start(new ProcessStartInfo() { FileName = "www.paramountplus.com", UseShellExecute = true });
+        }
+
+    private void PplusLogo_Click(object sender, EventArgs e)
+        {
+        Process.Start(new ProcessStartInfo() { FileName = "www.paramountplus.com", UseShellExecute = true });
+        }
+
+    // EXIT BUTTON
+    private void ExitBtn_Click(object sender, EventArgs e)
         {
         // Plays end of session sound
-        SoundPlayer sPlayer = new SoundPlayer(@"c:\users\Chris\Downloads\communications_end_transmission.wav");
+        SoundPlayer sPlayer = new(Properties.Resources.communications_end_transmission);
         sPlayer.PlaySync();
 
         // Exits the program
@@ -172,41 +202,40 @@ public partial class mainForm : Form
         }
 
 
-    // Confirm button logic that calls appropriate methods based on which button is active
-    public void confirmButton_Click(object sender, EventArgs e)
+    // CONFIRM BUTTON
+    public void ConfirmButton_Click(object sender, EventArgs e)
         {
         Focus();
-        confirmButton.Enabled = false;
+        //ConfirmButton.Enabled = false;
 
         if (StarshipBtnClicked == true)
             {
-            confirmButton.Enabled = true;
+            //ConfirmButton.Enabled = true;
             StarshipSearch();
             }
         else if (statRegClicked == true)
             {
-            confirmButton.Enabled = true;
+            //    ConfirmButton.Enabled = true;
+            StationSearch();
             }
         }
 
 
     // Clears all text fields and resets UI to default based on which button is active
-    private void clearButton_Click(object sender, EventArgs e)
+    private void ClearButton_Click(object sender, EventArgs e)
         {
         if (StarshipBtnClicked == true)
             {
-            randomKeySound();
-            StarshipButton();
+            RandomKeySound();
+            StarshipSearchScreen();
             }
         else if (statRegClicked == true)
             {
-            randomKeySound();
-            StationButton();
+            RandomKeySound();
+            StationSearchScreen();
             }
         }
     #endregion
-
-
 
 
 
@@ -234,37 +263,74 @@ public partial class mainForm : Form
                 outputLabel.Text = searchResult.ToString();
                 }
             }
+
+        RegisteredShips.Text = $"REGISTERED STARSHIPS" + "\n\r" +
+            "--------------" + "\n\r" +
+            "NX-01 | USS ENTERPRISE" + "\n\r" +
+                      "NCC-1701 | USS ENTERPRISE" + "\n\r" +
+                                "NCC-1701 A | USS ENTERPRISE A" + "\n\r" +
+                                 "NCC-1701 D | USS ENTERPRISE D" + "\n\r" +
+                                  "NCC-1701 E| USS ENTERPRISE E" + "\n\r" +
+                                   "NCC-71807 | USS YAMATO" + "\n\r" +
+                                    "NCC-71832 | USS ODYSSEY" + "\n\r" +
+                                    "NCC-74656 | USS VOYAGER" + "\n\r" +
+                                    "NX-72405 | USS DEFIANT" + "\n\r" +
+                                    "NCC-74210 | USS VALIANT" + "\n\r" +
+                                    "NCC-1031 | USS DISCOVERY" + "\n\r" +
+                                    "NCC-75567 | USS CERRITOS" + "\n\r" +
+                                    "NX-76884 | USS PROTOSTAR" + "\n\r" +
+                                    "NX-82893 | USS STARGAZER" + "\n\r" +
+                                    "NAR-93131 | SS LA SIRENA" + "\n\r" +
+                                    "IKC-62127 | IKS ROTARRAN" + "\n\r" +
+                                    "SCIMITAR" + "\n\r";
+
+
+
         }
 
 
 
     public void StationSearch()
         {
-        var numOfStat = 1;
-        for (int st = 0; st < numOfStat; st++)
+        Stations ds9 = new("Deep Space 9", "Terok Nor Class", "Bajoran Militia / Starfleet", "Denorios Belt / Bajoran System", "Alpha Quadrant", "300 - 2000 Crew Members", "7000 People", "6 DOCKING PYLONS / 3 MEDIUM DOCKING RING PORTS / 9 SMALL DOCKING RING PORTS / 6 LANDING PADS", "48 PHASER ARRAYS WITH ROTARY MOUNTS / 36 PHASER EMITTERS WITH STATIONARY MOUNTS / 3 PHASER EMITTERS WITH SLIDING MOUNTS / 48+ TORPEDO LAUNCHERS / 5000+ PHOTON TORPEDOES", "Deflector Shields", "ACTIVE");
+
+        Stations utopia = new("Utopia Planitia Shipyards", "Shipyard", "Starfleet", "Sol System / Orbiting Mars", "Alpha Quadrant", "830 crew members", "", "64 space pads / 322 T1 Drydocks / 89 t2 drydocks / 50 t3 drydocks / 25 t4 drydocks / 1 spacedock", "30 defense platforms", "Deflector Shields / Tachyon Detection Grid", "Destroyed 2385");
+
+        string station = inputText.Text.ToUpper();
+
+        outputLabel.Text = station switch
             {
-            var findStation = inputText.Text.ToUpper();
 
-            string[] csvLinesSt = System.IO.File.ReadAllLines(@"spacestations.csv");
+                "DEEP SPACE 9" or "DS9" => $"STATION DESIGNATION: {ds9.stationName.ToUpper()}" + "\n\r" +
+                                    $"CLASS: {ds9.stationClass.ToUpper()}" + "\n\r" +
+                                    $"OPERATOR: {ds9.stationOperator.ToUpper()}" + "\n\r" +
+                                    $"GALACTIC QUADRANT: {ds9.galacticQuadrant.ToUpper()}" + "\n\r" +
+                                    $"CREW COMPLIMENT: {ds9.crewCapacity.ToUpper()}" + "\n\r" +
+                                    $"MAXIMUM OCCUPANCY: {ds9.maximumOccupant.ToUpper()}" + "\n\r" +
+                                    $"DOCKING FACILITIES: {ds9.docking.ToUpper()}" + "\n\r" +
+                                    $"WEAPON SYSTEMS: {ds9.weaponCapability.ToUpper()}" + "\n\r" +
+                                    $"DEFENSE CAPABILITES: {ds9.defenses.ToUpper()}" + "\n\r" +
+                                    $"STATUS: {ds9.status.ToUpper()}" + "\n\r",
 
-            var station = new List<Stations>();
+                "UTOPIA PLANITIA SHIPYARDS" or "UTOPIA PLANITIA" => $"STATION DESIGNATION: {utopia.stationName.ToUpper()}" + "\n\r" +
+                                    $"CLASS: {utopia.stationClass.ToUpper()}" + "\n\r" +
+                                    $"OPERATOR: {utopia.stationOperator.ToUpper()}" + "\n\r" +
+                                    $"GALACTIC QUADRANT: {utopia.galacticQuadrant.ToUpper()}" + "\n\r" +
+                                    $"CREW COMPLIMENT: {utopia.crewCapacity.ToUpper()}" + "\n\r" +
+                                    $"MAXIMUM OCCUPANCY: {utopia.maximumOccupant.ToUpper()}" + "\n\r" +
+                                    $"DOCKING FACILITIES: {utopia.docking.ToUpper()}" + "\n\r" +
+                                    $"WEAPON SYSTEMS: {utopia.weaponCapability.ToUpper()}" + "\n\r" +
+                                    $"DEFENSE CAPABILITES: {utopia.defenses.ToUpper()}" + "\n\r" +
+                                    $"STATUS: {utopia.status.ToUpper()}" + "\n\r",
 
-            for (int s = 1; s < csvLinesSt.Length; s++)
-                {
-                Stations spacestation = new Stations(csvLinesSt[s]);
-                station.Add(spacestation);
-                }
+                _ => $"SPACE STATION '{station}' WAS NOT FOUND. PLEASE VERIFY SEARCH PARAMETERS AND TRY AGAIN.",
+                };
 
-            for (int s = 0; s < station.Count; s++)
-                {
-                var statResult = station.Where(s => s.stationName.Contains(findStation)).FirstOrDefault();
-                outputLabel.Text = statResult.ToString();
-                }
-            }
+        RegisteredShips.Text = $"REGISTERED SPACE STATIONS" + "\n\r" +
+                                "--------------" + "\n\r" +
+                                "DEEP SPACE 9" + "\n\r" +
+                                 "UTOPIA PLANITIA SHIPYARDS" + "\n\r";
         }
-
-
-
 
     #endregion
 
@@ -274,44 +340,63 @@ public partial class mainForm : Form
 
     #region Mouse Over Methods
     // Swaps button images for mouse over
-    void starshipRegButton_MouseEnter(object sender, EventArgs e)   // STARSHIP REGISTRY BUTTON
+    void StarshipRegButton_MouseEnter(object sender, EventArgs e)   // STARSHIP REGISTRY BUTTON
         {
-        this.starshipRegButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.starRegOver));
+        this.StarshipButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.starRegOver));
         }
 
-    void starshipRegButton_MouseLeave(object sender, EventArgs e)
+    void StarshipRegButton_MouseLeave(object sender, EventArgs e)
         {
-        this.starshipRegButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.starRegButton));
+        this.StarshipButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.starRegButton));
         }
 
-    void stationRegButton_MouseEnter(object sender, EventArgs e)     // SPACE STATION REGISTRY BUTTON
+    void StationRegButton_MouseEnter(object sender, EventArgs e)     // SPACE STATION REGISTRY BUTTON
         {
-        this.stationRegButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.statRegOver));
+        this.StationButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.statRegOver));
         }
 
-    void stationRegButton_MouseLeave(object sender, EventArgs e)
+    void StationRegButton_MouseLeave(object sender, EventArgs e)
         {
-        this.stationRegButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.statRegButton));
+        this.StationButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.statRegButton));
         }
 
-    void watchButton_MouseEnter(object sender, EventArgs e)     // NEW REGISTRY BUTTON
+    void WatchButton_MouseEnter(object sender, EventArgs e)     // WATCH BUTTON
         {
         this.WatchButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.WatchButtonOver));
         }
 
-    void watchButton_MouseLeave(object sender, EventArgs e)
+    void WatchButton_MouseLeave(object sender, EventArgs e)
         {
         this.WatchButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.watchButton));
         }
 
-    void exitButton_MouseEnter(object sender, EventArgs e)     // EXIT BUTTON
+    void ExitButton_MouseEnter(object sender, EventArgs e)     // EXIT BUTTON
         {
-        this.exitButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitOver));
+        this.ExitButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitOver));
         }
 
-    void exitButton_MouseLeave(object sender, EventArgs e)
+    void ExitButton_MouseLeave(object sender, EventArgs e)
         {
-        this.exitButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitButton));
+        this.ExitButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitButton));
+        }
+    void ConfirmButton_MouseEnter(object sender, EventArgs e)     // EXIT BUTTON
+        {
+        this.ConfirmButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.ConfirmButtonOver));
+        }
+
+    void ConfirmButton_MouseLeave(object sender, EventArgs e)
+        {
+        this.ConfirmButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.ConfirmButton));
+        }
+
+    void ClearButton_MouseEnter(object sender, EventArgs e)     // EXIT BUTTON
+        {
+        this.ClearButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.ClearButtonOver));
+        }
+
+    void ClearButton_MouseLeave(object sender, EventArgs e)
+        {
+        this.ClearButton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.ClearButton));
         }
 
     #endregion
@@ -350,7 +435,7 @@ public partial class mainForm : Form
 
 
     // Converts current date/time to Stardate
-    public double CalcStardate()
+    public static double CalcStardate()
         {
         DateTime calenderStarTrek = new DateTime(2323, 1, 1, 0, 0, 0);
         DateTime presentLocalDate = DateTime.Now;
@@ -367,21 +452,21 @@ public partial class mainForm : Form
 
 
     // Plays sound effects for Accepted/Denied Inputs
-    public void AcceptedInput()
+    public static void AcceptedInput()
         {
-        SoundPlayer enterPress = new SoundPlayer(@"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\input_ok_2_clean.wav");
+        SoundPlayer enterPress = new(Properties.Resources.input_ok_2_clean);
         enterPress.PlaySync();
         }
 
-    public void DeniedInput()
+    public static void DeniedInput()
         {
-        SoundPlayer enterPress = new SoundPlayer(@"G:\Code Kentucky Projects\StarshipRegistryGUI\Resources\input_failed_clean.wav");
+        SoundPlayer enterPress = new(Properties.Resources.input_failed_clean);
         enterPress.Play();
         }
 
 
     // PLAYS A RANDOM SOUND WHEN BUTTONS ARE PRESSED
-    public void randomKeySound()
+    public static void RandomKeySound()
         {
         List<string> sounds = new List<string>();
         sounds.Add(@"c:\Users\Chris\Downloads\keyok1.wav");
@@ -393,19 +478,10 @@ public partial class mainForm : Form
 
         string randomSound = sounds.OrderBy(s => Guid.NewGuid()).First();
 
-        SoundPlayer ranKeySound = new SoundPlayer(randomSound);
+        SoundPlayer ranKeySound = new(randomSound);
         ranKeySound.PlaySync();
         }
 
-    private void WatchOnPPlus_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-        Process.Start(new ProcessStartInfo() { FileName = "www.paramountplus.com", UseShellExecute = true });
-        }
-
-    private void PplusLogo_Click(object sender, EventArgs e)
-        {
-        Process.Start(new ProcessStartInfo() { FileName = "www.paramountplus.com", UseShellExecute = true });
-        }
     }
 
 

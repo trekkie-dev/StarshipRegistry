@@ -1,6 +1,6 @@
 ﻿namespace StarshipRegistryGUI
     {
-    partial class mainForm
+    partial class MainForm
         {
         /// <summary>
         ///  Required designer variable.
@@ -32,17 +32,18 @@
             this.inputText = new System.Windows.Forms.TextBox();
             this.AppTitleLabel = new System.Windows.Forms.Label();
             this.selectionLabel = new System.Windows.Forms.Label();
-            this.starshipRegButton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
+            this.StarshipButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.infoTextBox = new System.Windows.Forms.Label();
-            this.confirmButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
+            this.ConfirmButton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.stardateLabel = new System.Windows.Forms.Label();
-            this.stationRegButton = new System.Windows.Forms.Button();
+            this.StationButton = new System.Windows.Forms.Button();
             this.WatchButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
             this.WatchOnPPlus = new System.Windows.Forms.LinkLabel();
             this.PplusLogo = new System.Windows.Forms.PictureBox();
+            this.RegisteredShips = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PplusLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             this.inputText.Name = "inputText";
             this.inputText.Size = new System.Drawing.Size(838, 28);
             this.inputText.TabIndex = 6;
-            this.inputText.Enter += new System.EventHandler(this.confirmButton_Click);
+            this.inputText.Enter += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // AppTitleLabel
             // 
@@ -98,41 +99,41 @@
             this.selectionLabel.Text = "SEARCH PARAMETERS:";
             this.selectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // starshipRegButton
+            // StarshipButton
             // 
-            this.starshipRegButton.BackColor = System.Drawing.Color.Transparent;
-            this.starshipRegButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.starRegButton;
-            this.starshipRegButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.starshipRegButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.starshipRegButton.FlatAppearance.BorderSize = 0;
-            this.starshipRegButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.starshipRegButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.starshipRegButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.starshipRegButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.starshipRegButton.Location = new System.Drawing.Point(1281, 100);
-            this.starshipRegButton.Name = "starshipRegButton";
-            this.starshipRegButton.Size = new System.Drawing.Size(200, 54);
-            this.starshipRegButton.TabIndex = 22;
-            this.starshipRegButton.UseVisualStyleBackColor = false;
-            this.starshipRegButton.Click += new System.EventHandler(this.accessBtn_Click);
+            this.StarshipButton.BackColor = System.Drawing.Color.Transparent;
+            this.StarshipButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.starRegButton;
+            this.StarshipButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.StarshipButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StarshipButton.FlatAppearance.BorderSize = 0;
+            this.StarshipButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.StarshipButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.StarshipButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.StarshipButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StarshipButton.Location = new System.Drawing.Point(1282, 82);
+            this.StarshipButton.Name = "StarshipButton";
+            this.StarshipButton.Size = new System.Drawing.Size(200, 54);
+            this.StarshipButton.TabIndex = 22;
+            this.StarshipButton.UseVisualStyleBackColor = false;
+            this.StarshipButton.Click += new System.EventHandler(this.AccessBtn_Click);
             // 
-            // exitButton
+            // ExitButton
             // 
-            this.exitButton.BackColor = System.Drawing.Color.Transparent;
-            this.exitButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.exitButton;
-            this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Location = new System.Drawing.Point(1281, 292);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(200, 54);
-            this.exitButton.TabIndex = 25;
-            this.exitButton.UseVisualStyleBackColor = false;
-            this.exitButton.Click += new System.EventHandler(this.exitBtn_Click);
+            this.ExitButton.BackColor = System.Drawing.Color.Transparent;
+            this.ExitButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.exitButton;
+            this.ExitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.ExitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.ExitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Location = new System.Drawing.Point(1282, 274);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(200, 54);
+            this.ExitButton.TabIndex = 25;
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // infoTextBox
             // 
@@ -145,39 +146,39 @@
             this.infoTextBox.TabIndex = 30;
             this.infoTextBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // confirmButton
+            // ConfirmButton
             // 
-            this.confirmButton.BackColor = System.Drawing.Color.Transparent;
-            this.confirmButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.ConfirmButton;
-            this.confirmButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.confirmButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.confirmButton.FlatAppearance.BorderSize = 0;
-            this.confirmButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.confirmButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmButton.Location = new System.Drawing.Point(44, 271);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(170, 54);
-            this.confirmButton.TabIndex = 31;
-            this.confirmButton.UseVisualStyleBackColor = true;
-            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
+            this.ConfirmButton.BackColor = System.Drawing.Color.Transparent;
+            this.ConfirmButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.ConfirmButton;
+            this.ConfirmButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ConfirmButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConfirmButton.FlatAppearance.BorderSize = 0;
+            this.ConfirmButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.ConfirmButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConfirmButton.Location = new System.Drawing.Point(44, 271);
+            this.ConfirmButton.Name = "ConfirmButton";
+            this.ConfirmButton.Size = new System.Drawing.Size(170, 54);
+            this.ConfirmButton.TabIndex = 31;
+            this.ConfirmButton.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
-            // clearButton
+            // ClearButton
             // 
-            this.clearButton.BackColor = System.Drawing.Color.Transparent;
-            this.clearButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.ClearButton__1_;
-            this.clearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.clearButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clearButton.FlatAppearance.BorderSize = 0;
-            this.clearButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.clearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearButton.Location = new System.Drawing.Point(44, 335);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(170, 54);
-            this.clearButton.TabIndex = 33;
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.ClearButton.BackColor = System.Drawing.Color.Transparent;
+            this.ClearButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.ClearButton;
+            this.ClearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearButton.FlatAppearance.BorderSize = 0;
+            this.ClearButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.ClearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearButton.Location = new System.Drawing.Point(44, 335);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(170, 54);
+            this.ClearButton.TabIndex = 33;
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // stardateLabel
             // 
@@ -191,23 +192,23 @@
             this.stardateLabel.Text = "87564.1";
             this.stardateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // stationRegButton
+            // StationButton
             // 
-            this.stationRegButton.BackColor = System.Drawing.Color.Transparent;
-            this.stationRegButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.statRegButton;
-            this.stationRegButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.stationRegButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stationRegButton.FlatAppearance.BorderSize = 0;
-            this.stationRegButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.stationRegButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.stationRegButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.stationRegButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stationRegButton.Location = new System.Drawing.Point(1281, 164);
-            this.stationRegButton.Name = "stationRegButton";
-            this.stationRegButton.Size = new System.Drawing.Size(200, 54);
-            this.stationRegButton.TabIndex = 38;
-            this.stationRegButton.UseVisualStyleBackColor = false;
-            this.stationRegButton.Click += new System.EventHandler(this.stationRegButton_Click);
+            this.StationButton.BackColor = System.Drawing.Color.Transparent;
+            this.StationButton.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.statRegButton;
+            this.StationButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.StationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StationButton.FlatAppearance.BorderSize = 0;
+            this.StationButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.StationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.StationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.StationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StationButton.Location = new System.Drawing.Point(1282, 146);
+            this.StationButton.Name = "StationButton";
+            this.StationButton.Size = new System.Drawing.Size(200, 54);
+            this.StationButton.TabIndex = 38;
+            this.StationButton.UseVisualStyleBackColor = false;
+            this.StationButton.Click += new System.EventHandler(this.StationRegButton_Click);
             // 
             // WatchButton
             // 
@@ -220,7 +221,7 @@
             this.WatchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.WatchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.WatchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WatchButton.Location = new System.Drawing.Point(1281, 228);
+            this.WatchButton.Location = new System.Drawing.Point(1282, 210);
             this.WatchButton.Name = "WatchButton";
             this.WatchButton.Size = new System.Drawing.Size(200, 54);
             this.WatchButton.TabIndex = 39;
@@ -234,7 +235,7 @@
             this.outputLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
             this.outputLabel.Location = new System.Drawing.Point(246, 308);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(1011, 491);
+            this.outputLabel.Size = new System.Drawing.Size(992, 491);
             this.outputLabel.TabIndex = 40;
             this.outputLabel.Text = " ";
             // 
@@ -246,12 +247,12 @@
             this.WatchOnPPlus.Font = new System.Drawing.Font("Antonio", 16.30189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.WatchOnPPlus.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.WatchOnPPlus.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
-            this.WatchOnPPlus.Location = new System.Drawing.Point(631, 699);
+            this.WatchOnPPlus.Location = new System.Drawing.Point(697, 689);
             this.WatchOnPPlus.Name = "WatchOnPPlus";
-            this.WatchOnPPlus.Size = new System.Drawing.Size(260, 37);
+            this.WatchOnPPlus.Size = new System.Drawing.Size(227, 37);
             this.WatchOnPPlus.TabIndex = 42;
             this.WatchOnPPlus.TabStop = true;
-            this.WatchOnPPlus.Text = "WATCH ON PARAMOUNT PLUS";
+            this.WatchOnPPlus.Text = "WATCH ON PARAMOUNT +";
             this.WatchOnPPlus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.WatchOnPPlus.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WatchOnPPlus_LinkClicked);
             // 
@@ -259,7 +260,7 @@
             // 
             this.PplusLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PplusLogo.Image = global::StarshipRegistryGUI.Properties.Resources.Paramount__logo;
-            this.PplusLogo.Location = new System.Drawing.Point(589, 489);
+            this.PplusLogo.Location = new System.Drawing.Point(639, 495);
             this.PplusLogo.Name = "PplusLogo";
             this.PplusLogo.Size = new System.Drawing.Size(342, 191);
             this.PplusLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -267,35 +268,48 @@
             this.PplusLogo.TabStop = false;
             this.PplusLogo.Click += new System.EventHandler(this.PplusLogo_Click);
             // 
-            // mainForm
+            // RegisteredShips
             // 
-            this.AcceptButton = this.confirmButton;
+            this.RegisteredShips.BackColor = System.Drawing.Color.Transparent;
+            this.RegisteredShips.Font = new System.Drawing.Font("Antonio", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RegisteredShips.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
+            this.RegisteredShips.Location = new System.Drawing.Point(1245, 359);
+            this.RegisteredShips.Name = "RegisteredShips";
+            this.RegisteredShips.Size = new System.Drawing.Size(237, 460);
+            this.RegisteredShips.TabIndex = 44;
+            this.RegisteredShips.Text = " ";
+            this.RegisteredShips.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // MainForm
+            // 
+            this.AcceptButton = this.ConfirmButton;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(19)))), ((int)(((byte)(34)))));
-            this.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.lcarsPicardEra1;
+            this.BackgroundImage = global::StarshipRegistryGUI.Properties.Resources.lcarsPicardEra__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.RegisteredShips);
             this.Controls.Add(this.PplusLogo);
             this.Controls.Add(this.WatchOnPPlus);
             this.Controls.Add(this.WatchButton);
-            this.Controls.Add(this.stationRegButton);
+            this.Controls.Add(this.StationButton);
             this.Controls.Add(this.stardateLabel);
             this.Controls.Add(this.infoTextBox);
             this.Controls.Add(this.headingLabel);
-            this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.confirmButton);
-            this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.starshipRegButton);
-            this.Controls.Add(this.selectionLabel);
+            this.Controls.Add(this.ClearButton);
+            this.Controls.Add(this.ConfirmButton);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.StarshipButton);
             this.Controls.Add(this.inputText);
             this.Controls.Add(this.AppTitleLabel);
             this.Controls.Add(this.outputLabel);
+            this.Controls.Add(this.selectionLabel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "mainForm";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LCARS DATABASE ACCESS    ";
-            this.Load += new System.EventHandler(this.mainForm_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PplusLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -307,16 +321,17 @@
         private TextBox inputText;
         private Label AppTitleLabel;
         private Label selectionLabel;
-        private Button starshipRegButton;
-        private Button exitButton;
+        private Button StarshipButton;
+        private Button ExitButton;
         private Label infoTextBox;
-        private Button confirmButton;
-        private Button clearButton;
+        private Button ConfirmButton;
+        private Button ClearButton;
         private Label stardateLabel;
-        private Button stationRegButton;
+        private Button StationButton;
         private Button WatchButton;
         private Label outputLabel;
         private LinkLabel WatchOnPPlus;
         private PictureBox PplusLogo;
+        private Label RegisteredShips;
         }
     }

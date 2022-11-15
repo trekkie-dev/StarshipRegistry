@@ -124,6 +124,9 @@
   <data name="splashRedesign" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\splashRedesign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ClearButtonOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClearButtonOver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="input_ok_3_clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\input_ok_3_clean.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -139,23 +142,17 @@
   <data name="input_ok_2_clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\input_ok_2_clean.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ConfirmButtonOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfirmButtonOver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ConfirmButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConfirmButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StarTrekLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\StarTrekLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="scrshow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\scrshow.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="statRegButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\starshipRegButton-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tng_commandcenter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tng_commandcenter.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lcarsPicardEra1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lcarsPicardEra1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="keyok4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyok4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -178,11 +175,8 @@
   <data name="exitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\starshipRegButton-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TngLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TngLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ClearButton (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ClearButton (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="scrshow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scrshow.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="starRegButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\starshipRegButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,6 +187,9 @@
   <data name="exitOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\starshipRegButton-31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Paramount+_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paramount+_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="keyok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyok1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -202,13 +199,16 @@
   <data name="starRegOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\starshipRegButton3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ClearButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClearButton (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="keyok2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyok2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="watchButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\watchButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paramount+_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paramount+_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lcarsPicardEra (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lcarsPicardEra (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
