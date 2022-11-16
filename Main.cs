@@ -97,7 +97,9 @@ public partial class MainForm : Form
         StarshipBtnClicked = true;
         statRegClicked = false;
 
-        RandomKeySound();
+        SoundPlayer enterPress = new(Properties.Resources.keyok1);
+        enterPress.PlaySync();
+
         StarshipSearchScreen();
 
         }
@@ -132,7 +134,9 @@ public partial class MainForm : Form
         StarshipBtnClicked = false;
         statRegClicked = true;
 
-        RandomKeySound(); // plays a random sound when buttons are pressed
+        SoundPlayer enterPress = new(Properties.Resources.keyok3);
+        enterPress.PlaySync();
+
         StationSearchScreen();
         }
 
@@ -171,7 +175,9 @@ public partial class MainForm : Form
         WatchOnPPlus.Visible = true;
         RegisteredShips.Text = String.Empty;
 
-        RandomKeySound(); // plays a random sound when buttons are pressed
+        SoundPlayer enterPress = new(Properties.Resources.keyok2);
+        enterPress.PlaySync();
+
         AppTitleLabel.Text = "// LET'S SEE WHAT'S OUT THERE";
 
         headingLabel.Font = new Font("Antonio", 28.0f, FontStyle.Regular);
@@ -226,12 +232,16 @@ public partial class MainForm : Form
         {
         if (StarshipBtnClicked == true)
             {
-            RandomKeySound();
+            SoundPlayer enterPress = new(Properties.Resources.keyok4);
+            enterPress.PlaySync();
+
             StarshipSearchScreen();
             }
         else if (statRegClicked == true)
             {
-            RandomKeySound();
+            SoundPlayer enterPress = new(Properties.Resources.keyok5);
+            enterPress.PlaySync();
+
             StationSearchScreen();
             }
         }
@@ -480,25 +490,6 @@ public partial class MainForm : Form
         SoundPlayer enterPress = new(Properties.Resources.input_failed_clean);
         enterPress.Play();
         }
-
-
-    // PLAYS A RANDOM SOUND WHEN BUTTONS ARE PRESSED
-    public static void RandomKeySound()
-        {
-        List<string> sounds = new List<string>();
-        sounds.Add(@"c:\Users\Chris\Downloads\keyok1.wav");
-        sounds.Add(@"c:\Users\Chris\Downloads\keyok2.wav");
-        sounds.Add(@"c:\Users\Chris\Downloads\keyok3.wav");
-        sounds.Add(@"c:\Users\Chris\Downloads\keyok4.wav");
-        sounds.Add(@"c:\Users\Chris\Downloads\keyok5.wav");
-        sounds.Add(@"c:\Users\Chris\Downloads\keyok6.wav");
-
-        string randomSound = sounds.OrderBy(s => Guid.NewGuid()).First();
-
-        SoundPlayer ranKeySound = new(randomSound);
-        ranKeySound.PlaySync();
-        }
-
     }
 
 
