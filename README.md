@@ -24,3 +24,13 @@ This program utilizes multiple elements outlined in our Project Requirements:
 The code below takes the current date/time and converts it do the in-universe Stardate. This information is then displayed in two separate areas within the Main Screen of the application.
 ![image](https://user-images.githubusercontent.com/112297081/202223729-05188822-8648-4063-b935-968013f31916.png)
 
+###Read data from an external file:
+The program reads Starship data from an external CSV file and displays the user's search query on the screen.
+![image](https://user-images.githubusercontent.com/112297081/202225107-831e9c20-0c23-4ed4-bda6-98442349a344.png)
+
+###Error handling:
+There are multiple instances of error processing/handling throughout the application. For example, this snippet of code accepts login data on the splash screen; if you enter your name you're granted access to the database, if you enter nothing, you'll receive and audio queue and be required to try again or exit the program.
+![image](https://user-images.githubusercontent.com/112297081/202226541-80d3d5ed-ed05-4a39-a251-7d69c29e9eca.png)
+
+
+
