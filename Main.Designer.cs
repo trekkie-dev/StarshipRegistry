@@ -68,10 +68,10 @@
             this.inputText.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.inputText.Font = new System.Drawing.Font("Antonio", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.inputText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(191)))), ((int)(((byte)(189)))));
-            this.inputText.Location = new System.Drawing.Point(419, 259);
+            this.inputText.Location = new System.Drawing.Point(432, 259);
             this.inputText.MaxLength = 60;
             this.inputText.Name = "inputText";
-            this.inputText.Size = new System.Drawing.Size(838, 28);
+            this.inputText.Size = new System.Drawing.Size(825, 28);
             this.inputText.TabIndex = 6;
             this.inputText.Enter += new System.EventHandler(this.ConfirmButton_Click);
             // 
@@ -94,7 +94,7 @@
             this.selectionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(163)))), ((int)(((byte)(176)))));
             this.selectionLabel.Location = new System.Drawing.Point(246, 259);
             this.selectionLabel.Name = "selectionLabel";
-            this.selectionLabel.Size = new System.Drawing.Size(167, 30);
+            this.selectionLabel.Size = new System.Drawing.Size(180, 30);
             this.selectionLabel.TabIndex = 20;
             this.selectionLabel.Text = "SEARCH PARAMETERS:";
             this.selectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
