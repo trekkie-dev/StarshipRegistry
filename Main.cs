@@ -243,6 +243,7 @@ public partial class MainForm : Form
     // STARSHIP SEARCH METHOD
     public void StarshipSearch()
         {
+
         var numOfShips = 1;
         for (int sh = 0; sh < numOfShips; sh++)
             {
@@ -260,9 +261,25 @@ public partial class MainForm : Form
             for (int i = 0; i < ships.Count; i++)
                 {
                 var searchResult = ships.Where(s => s.ShipName.Contains(findShip) || s.registryNum.Contains(findShip)).FirstOrDefault();
-                outputLabel.Text = searchResult.ToString();
+
+                if (searchResult != null)
+                    {
+                    outputLabel.Text = searchResult?.ToString();
+                    break;
+                    }
+                else
+                    {
+                    DeniedInput();
+                    outputLabel.Text = $"TOUR SEARCH RETURNED NO RESULTS. PLEASE VERIFY SEARCH PARAMETERS AND TRY AGAIN.";
+                    }
                 }
             }
+
+
+
+
+
+
 
         RegisteredShips.Text = $"REGISTERED STARSHIPS" + "\n\r" +
             "--------------" + "\n\r" +
