@@ -10,5 +10,7 @@ Users will be met with this "LCARS Network Access" age, which is sort of like a 
 ![image](https://user-images.githubusercontent.com/112297081/202057910-04ef6f21-5785-44f4-aac9-03347bc353a3.png)
 
 The user will then be greeted with the main "LCARS Database" screen. From there it is possible to navigate to different areas of the application.
+
+## WELCOME CAPTAIN
 ![image](https://user-images.githubusercontent.com/112297081/202058484-d6f04d2a-a2aa-4e4d-bd31-bd6545305684.png)
 
