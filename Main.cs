@@ -281,7 +281,6 @@ public partial class MainForm : Form
                     }
                 else
                     {
-                    DeniedInput();
                     outputLabel.Text = $"TOUR SEARCH RETURNED NO RESULTS. PLEASE VERIFY SEARCH PARAMETERS AND TRY AGAIN.";
                     }
                 }
