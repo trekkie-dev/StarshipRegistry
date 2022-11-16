@@ -4,7 +4,7 @@
 
 This app allows for a GUI search from a CSV database of vessels and starbases from the Star Trek Universe. The program begins with a few dozen Starships in the database but also allows for the addition of more ships by the user.
 
-## PLEASE READ
+## *PLEASE READ
 For the best experience using this app, I recommend you install the font called "Antonio-VariableFont_wght" in the main directory of this repo. To install a font, just right-click on the font file and choose "Install". 
 
 ## Using the Starship Registry
