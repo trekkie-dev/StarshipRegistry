@@ -23,23 +23,23 @@ public partial class MainForm : Form
 
 
         // BUTTON MOUSE OVER
-        StarshipButton.MouseEnter += new EventHandler(StarshipRegButton_MouseEnter);
-        StarshipButton.MouseLeave += new EventHandler(StarshipRegButton_MouseLeave);
+        StarshipButton.MouseEnter += new EventHandler(StarshipRegButton_MouseEnter!);
+        StarshipButton.MouseLeave += new EventHandler(StarshipRegButton_MouseLeave!);
 
-        StationButton.MouseEnter += new EventHandler(StationRegButton_MouseEnter);
-        StationButton.MouseLeave += new EventHandler(StationRegButton_MouseLeave);
+        StationButton.MouseEnter += new EventHandler(StationRegButton_MouseEnter!);
+        StationButton.MouseLeave += new EventHandler(StationRegButton_MouseLeave!);
 
-        WatchButton.MouseEnter += new EventHandler(WatchButton_MouseEnter);
-        WatchButton.MouseLeave += new EventHandler(WatchButton_MouseLeave);
+        WatchButton.MouseEnter += new EventHandler(WatchButton_MouseEnter!);
+        WatchButton.MouseLeave += new EventHandler(WatchButton_MouseLeave!);
 
-        ExitButton.MouseEnter += new EventHandler(ExitButton_MouseEnter);
-        ExitButton.MouseLeave += new EventHandler(ExitButton_MouseLeave);
+        ExitButton.MouseEnter += new EventHandler(ExitButton_MouseEnter!);
+        ExitButton.MouseLeave += new EventHandler(ExitButton_MouseLeave!);
 
-        ClearButton.MouseEnter += new EventHandler(ClearButton_MouseEnter);
-        ClearButton.MouseLeave += new EventHandler(ClearButton_MouseLeave);
+        ClearButton.MouseEnter += new EventHandler(ClearButton_MouseEnter!);
+        ClearButton.MouseLeave += new EventHandler(ClearButton_MouseLeave!);
 
-        ConfirmButton.MouseEnter += new EventHandler(ConfirmButton_MouseEnter);
-        ConfirmButton.MouseLeave += new EventHandler(ConfirmButton_MouseLeave);
+        ConfirmButton.MouseEnter += new EventHandler(ConfirmButton_MouseEnter!);
+        ConfirmButton.MouseLeave += new EventHandler(ConfirmButton_MouseLeave!);
 
 
 
@@ -250,6 +250,8 @@ public partial class MainForm : Form
 
 
     #region Features Methods
+
+
     // STARSHIP SEARCH METHOD
     public void StarshipSearch()
         {
