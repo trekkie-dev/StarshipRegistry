@@ -17,3 +17,10 @@ The user will then be greeted with the main "LCARS Database" screen. From there 
 ## WELCOME CAPTAIN
 ![image](https://user-images.githubusercontent.com/112297081/202058484-d6f04d2a-a2aa-4e4d-bd31-bd6545305684.png)
 
+## Project Requirements
+This program utilizes multiple elements outlined in our Project Requirements:
+
+### Calculate/Display based on an external factor:
+The code below takes the current date/time and converts it do the in-universe Stardate. This information is then displayed in two separate areas within the Main Screen of the application.
+![image](https://user-images.githubusercontent.com/112297081/202223729-05188822-8648-4063-b935-968013f31916.png)
+
