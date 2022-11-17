@@ -4,7 +4,7 @@
 
 This app allows for a GUI search from a CSV database of vessels and starbases from the Star Trek Universe. The program begins with a few dozen Starships in the database but also allows for the addition of more ships by the user.
 
-## *PLEASE READ
+## PLEASE READ
 For the best experience using this app, I recommend you install the font called "Antonio-VariableFont_wght" in the main directory of this repo. To install a font, just right-click on the font file and choose "Install".
 
 ## Using the Starship Registry
@@ -32,5 +32,11 @@ The program reads Starship data from an external CSV file and displays the user'
 There are multiple instances of error processing/handling throughout the application. For example, this snippet of code accepts login data on the splash screen; if you enter your name you're granted access to the database, if you enter nothing, you'll receive and audio queue and be required to try again or exit the program.
 ![image](https://user-images.githubusercontent.com/112297081/202226541-80d3d5ed-ed05-4a39-a251-7d69c29e9eca.png)
 
+### Other Requirements
+In addition to the three requirements above, My project also utilizes additional requirements such as Inheritance and Linq.
+
+## Thank you for viewing my project!
+
+# Live Long and Prosper 🖖
 
 
