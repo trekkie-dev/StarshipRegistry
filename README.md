@@ -9,10 +9,10 @@ For the best experience using this app, I recommend you install the font called 
 
 ## Using the Starship Registry
 
-Users will be met with this "LCARS Network Access" age, which is sort of like a login page. Enter your name and press enter (or the "SECURE LOG IN" button to continue.
+Users will be met with this "LCARS Network Access" age, which is sort of like a login page. Enter your name and press enter (or the "SECURE LOG IN" button to continue. You must enter a name or you will not be allowed to the next screen.
 ![image](https://user-images.githubusercontent.com/112297081/202057910-04ef6f21-5785-44f4-aac9-03347bc353a3.png)
 
-The user will then be greeted with the main "LCARS Database" screen. From there it is possible to navigate to different areas of the application.
+The user will then be greeted with the main "LCARS Database" screen. From there it is possible to navigate to different areas of the application. Main navigation is to the right, you'll find four buttons leading to both the Ship/Station Registries as well as the "Watch Star Trek" button and the button to Exit the program. To the left you'll find the "Confirm" button (which works just like the enter key) and "Clear" button (clears the current selection from the screen).
 
 ## WELCOME CAPTAIN
 ![image](https://user-images.githubusercontent.com/112297081/202058484-d6f04d2a-a2aa-4e4d-bd31-bd6545305684.png)
